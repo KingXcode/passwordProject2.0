@@ -1,0 +1,10 @@
+NORMAL   NIGHT    RED      Green
+#ffffff  #53cac3  #fafafa  #000000   BG
+#aaaaaa  #313131  #aaaaaa  #e1e1e1   SEP
+#0000ff  #ffffff  #fa0000  #fafafa   TINT
+#000000  #ffffff  #000000  #fafafa   TEXT
+#ffffff  #444444  #ffffff  #fafafa   BAR
+#f0f0f0  #222222  #dedede  #fafafa   HIGHLIGHTED
+
+
+  
