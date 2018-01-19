@@ -9,6 +9,7 @@
 #import "HTConfigManager.h"
 #import "HTDataBaseManager.h"
 #import <MessageUI/MessageUI.h>
+#import "AppDelegate+HT.h"
 
 @interface HTConfigManager()<MFMailComposeViewControllerDelegate>
 

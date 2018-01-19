@@ -122,6 +122,8 @@ NSString * const ht_strName = ht_String;
 
 
 //判断系统版本
+//ios 11.0+
+#define ht_IOS11_OR_LATER        ( [[UIDevice currentDevice] systemVersion].integerValue>=11)
 //ios 10.0+
 #define ht_IOS10_OR_LATER		( [[UIDevice currentDevice] systemVersion].integerValue>=10)
 //ios 9.0+

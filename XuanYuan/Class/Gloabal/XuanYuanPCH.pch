@@ -20,7 +20,6 @@
 #import <YTKKeyValueStore.h>//数据库
 
 #import "AppDelegate.h"
-#import "AppDelegate+HT.h"
 #import "XuanYuan-Swift.h"
 
 #import "UITableView+Extension.h"   //tableView 刷新动画
@@ -50,8 +49,11 @@
 #import "HTColorManager.h"
 #import "HTPlaceHolderView.h"
 
+
+
 #import "XuanYuanGloabal.h"
 #import "HTToolSet.h"
+#import "DKNightVersion.h"
 
 
 
