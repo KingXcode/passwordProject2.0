@@ -447,6 +447,13 @@
 		FB7E7C962011DF1500158EF9 /* NSString+HTBigNums.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7C952011DF1500158EF9 /* NSString+HTBigNums.m */; };
 		FB7E7C9A2011E15900158EF9 /* AppDelegate+HT.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7C992011E15900158EF9 /* AppDelegate+HT.m */; };
 		FB7E7C9D2011E21600158EF9 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB7E7C9B2011E21600158EF9 /* Main2.storyboard */; };
+		FB7E7CA62012E3F100158EF9 /* HTMainAccountsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7CA52012E3F100158EF9 /* HTMainAccountsModel.m */; };
+		FB7E7CAB201310DB00158EF9 /* HTKindSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7CAA201310DB00158EF9 /* HTKindSelectVC.m */; };
+		FB7E7CB02013112E00158EF9 /* HTKindAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7CAF2013112E00158EF9 /* HTKindAddVC.m */; };
+		FB7E7CB4201311C400158EF9 /* XYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7CB3201311C400158EF9 /* XYBaseViewController.m */; };
+		FB7E7CB72013121B00158EF9 /* XYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7CB62013121B00158EF9 /* XYTabBarController.m */; };
+		FB815E6D2013211D00327A43 /* XYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB815E6C2013211D00327A43 /* XYNavigationController.m */; };
+		FBD18EEA201315880094AC0F /* XYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD18EE9201315880094AC0F /* XYSettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1331,6 +1338,20 @@
 		FB7E7C982011E15800158EF9 /* AppDelegate+HT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HT.h"; sourceTree = "<group>"; };
 		FB7E7C992011E15900158EF9 /* AppDelegate+HT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+HT.m"; sourceTree = "<group>"; };
 		FB7E7C9C2011E21600158EF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main2.storyboard; sourceTree = "<group>"; };
+		FB7E7CA42012E3F100158EF9 /* HTMainAccountsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMainAccountsModel.h; sourceTree = "<group>"; };
+		FB7E7CA52012E3F100158EF9 /* HTMainAccountsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMainAccountsModel.m; sourceTree = "<group>"; };
+		FB7E7CA9201310DB00158EF9 /* HTKindSelectVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTKindSelectVC.h; sourceTree = "<group>"; };
+		FB7E7CAA201310DB00158EF9 /* HTKindSelectVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTKindSelectVC.m; sourceTree = "<group>"; };
+		FB7E7CAE2013112E00158EF9 /* HTKindAddVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTKindAddVC.h; sourceTree = "<group>"; };
+		FB7E7CAF2013112E00158EF9 /* HTKindAddVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTKindAddVC.m; sourceTree = "<group>"; };
+		FB7E7CB2201311C400158EF9 /* XYBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYBaseViewController.h; sourceTree = "<group>"; };
+		FB7E7CB3201311C400158EF9 /* XYBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYBaseViewController.m; sourceTree = "<group>"; };
+		FB7E7CB52013121B00158EF9 /* XYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYTabBarController.h; sourceTree = "<group>"; };
+		FB7E7CB62013121B00158EF9 /* XYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYTabBarController.m; sourceTree = "<group>"; };
+		FB815E6B2013211D00327A43 /* XYNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNavigationController.h; sourceTree = "<group>"; };
+		FB815E6C2013211D00327A43 /* XYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNavigationController.m; sourceTree = "<group>"; };
+		FBD18EE8201315880094AC0F /* XYSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYSettingViewController.h; sourceTree = "<group>"; };
+		FBD18EE9201315880094AC0F /* XYSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1785,8 +1806,6 @@
 				1C4EB2781EA455B2009A1B3D /* UIButton+EnlargeEdge.m */,
 				1C4EB2791EA455B2009A1B3D /* UINavigationController+JWPageJumpTool.h */,
 				1C4EB27A1EA455B2009A1B3D /* UINavigationController+JWPageJumpTool.m */,
-				1C4EB27B1EA455B2009A1B3D /* UIView+AddClick.h */,
-				1C4EB27C1EA455B2009A1B3D /* UIView+AddClick.m */,
 				1C4EB27D1EA455B2009A1B3D /* UIView+ZTQuickControl.h */,
 				1C4EB27E1EA455B2009A1B3D /* UIView+ZTQuickControl.m */,
 				1C4EB27F1EA455B2009A1B3D /* ZTButton.h */,
@@ -3274,6 +3293,7 @@
 		FB7E7C242011DDE700158EF9 /* Class2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				FB7E7C9E2011EFC700158EF9 /* Main */,
 				FB7E7C972011E0D000158EF9 /* Gloabal */,
 				FB7E7C932011DE4100158EF9 /* Tools */,
 				FB7E7C252011DDE700158EF9 /* Third */,
@@ -3382,16 +3402,16 @@
 			isa = PBXGroup;
 			children = (
 				FB7E7C592011DDE700158EF9 /* UISearchBar+Keyboard.h */,
-				FB7E7C5A2011DDE700158EF9 /* UIImageView+Night.m */,
+				FB7E7C602011DDE700158EF9 /* UISearchBar+Keyboard.m */,
 				FB7E7C5B2011DDE700158EF9 /* UIButton+Night.h */,
+				FB7E7C622011DDE700158EF9 /* UIButton+Night.m */,
 				FB7E7C5C2011DDE700158EF9 /* UITextField+Keyboard.h */,
 				FB7E7C5D2011DDE700158EF9 /* UITextView+Keyboard.m */,
 				FB7E7C5E2011DDE700158EF9 /* UINavigationBar+Animation.h */,
-				FB7E7C5F2011DDE700158EF9 /* UIImageView+Night.h */,
-				FB7E7C602011DDE700158EF9 /* UISearchBar+Keyboard.m */,
-				FB7E7C612011DDE700158EF9 /* UITextField+Keyboard.m */,
-				FB7E7C622011DDE700158EF9 /* UIButton+Night.m */,
 				FB7E7C632011DDE700158EF9 /* UINavigationBar+Animation.m */,
+				FB7E7C5F2011DDE700158EF9 /* UIImageView+Night.h */,
+				FB7E7C5A2011DDE700158EF9 /* UIImageView+Night.m */,
+				FB7E7C612011DDE700158EF9 /* UITextField+Keyboard.m */,
 				FB7E7C642011DDE700158EF9 /* UITextView+Keyboard.h */,
 			);
 			path = Manual;
@@ -3401,8 +3421,8 @@
 			isa = PBXGroup;
 			children = (
 				FB7E7C662011DDE700158EF9 /* DKDeallocBlockExecutor.m */,
-				FB7E7C672011DDE700158EF9 /* NSObject+DeallocBlock.h */,
 				FB7E7C682011DDE700158EF9 /* DKDeallocBlockExecutor.h */,
+				FB7E7C672011DDE700158EF9 /* NSObject+DeallocBlock.h */,
 				FB7E7C692011DDE700158EF9 /* NSObject+DeallocBlock.m */,
 			);
 			path = DeallocBlockExecutor;
@@ -3412,9 +3432,9 @@
 			isa = PBXGroup;
 			children = (
 				FB7E7C6D2011DDE700158EF9 /* CoreAnimation+Night.h */,
+				FB7E7C702011DDE700158EF9 /* CAShapeLayer+Night.h */,
 				FB7E7C6E2011DDE700158EF9 /* CAShapeLayer+Night.m */,
 				FB7E7C6F2011DDE700158EF9 /* CALayer+Night.m */,
-				FB7E7C702011DDE700158EF9 /* CAShapeLayer+Night.h */,
 				FB7E7C712011DDE700158EF9 /* CALayer+Night.h */,
 			);
 			path = CoreAnimation;
@@ -3423,6 +3443,7 @@
 		FB7E7C932011DE4100158EF9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				FB815E6E2013386300327A43 /* UIVIew-分类 */,
 				1C8386FD1EB182AE006A8A71 /* 加密解密 */,
 				1C1DB60E1EF7805A000E6AEF /* HTTools */,
 			);
@@ -3435,6 +3456,124 @@
 				1C8387011EB197DD006A8A71 /* XuanYuanGloabal.h */,
 			);
 			path = Gloabal;
+			sourceTree = "<group>";
+		};
+		FB7E7C9E2011EFC700158EF9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FB7E7CB12013116A00158EF9 /* 基类 */,
+				FB7E7C9F2011F48700158EF9 /* 分类 */,
+				FB7E7CA22011F4A700158EF9 /* 设置 */,
+				FB7E7CA32011F56200158EF9 /* 数据库模型(model) */,
+				FB7E7CA12011F4A000158EF9 /* 添加备忘录 */,
+				FB7E7CA02011F48D00158EF9 /* 添加帐号 */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FB7E7C9F2011F48700158EF9 /* 分类 */ = {
+			isa = PBXGroup;
+			children = (
+				FB7E7CAC2013110B00158EF9 /* 新增分类 */,
+				FB7E7CA82013101200158EF9 /* Controller */,
+			);
+			path = "分类";
+			sourceTree = "<group>";
+		};
+		FB7E7CA02011F48D00158EF9 /* 添加帐号 */ = {
+			isa = PBXGroup;
+			children = (
+				FB7E7CA72012E85900158EF9 /* Controller */,
+			);
+			path = "添加帐号";
+			sourceTree = "<group>";
+		};
+		FB7E7CA12011F4A000158EF9 /* 添加备忘录 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "添加备忘录";
+			sourceTree = "<group>";
+		};
+		FB7E7CA22011F4A700158EF9 /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				FBD18EE72013156E0094AC0F /* Controller */,
+			);
+			path = "设置";
+			sourceTree = "<group>";
+		};
+		FB7E7CA32011F56200158EF9 /* 数据库模型(model) */ = {
+			isa = PBXGroup;
+			children = (
+				FB7E7CA42012E3F100158EF9 /* HTMainAccountsModel.h */,
+				FB7E7CA52012E3F100158EF9 /* HTMainAccountsModel.m */,
+			);
+			path = "数据库模型(model)";
+			sourceTree = "<group>";
+		};
+		FB7E7CA72012E85900158EF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB7E7CA82013101200158EF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB7E7CA9201310DB00158EF9 /* HTKindSelectVC.h */,
+				FB7E7CAA201310DB00158EF9 /* HTKindSelectVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB7E7CAC2013110B00158EF9 /* 新增分类 */ = {
+			isa = PBXGroup;
+			children = (
+				FB7E7CAD2013111600158EF9 /* Controller */,
+			);
+			path = "新增分类";
+			sourceTree = "<group>";
+		};
+		FB7E7CAD2013111600158EF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB7E7CAE2013112E00158EF9 /* HTKindAddVC.h */,
+				FB7E7CAF2013112E00158EF9 /* HTKindAddVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB7E7CB12013116A00158EF9 /* 基类 */ = {
+			isa = PBXGroup;
+			children = (
+				FB7E7CB2201311C400158EF9 /* XYBaseViewController.h */,
+				FB7E7CB3201311C400158EF9 /* XYBaseViewController.m */,
+				FB7E7CB52013121B00158EF9 /* XYTabBarController.h */,
+				FB7E7CB62013121B00158EF9 /* XYTabBarController.m */,
+				FB815E6B2013211D00327A43 /* XYNavigationController.h */,
+				FB815E6C2013211D00327A43 /* XYNavigationController.m */,
+			);
+			path = "基类";
+			sourceTree = "<group>";
+		};
+		FB815E6E2013386300327A43 /* UIVIew-分类 */ = {
+			isa = PBXGroup;
+			children = (
+				1C4EB27B1EA455B2009A1B3D /* UIView+AddClick.h */,
+				1C4EB27C1EA455B2009A1B3D /* UIView+AddClick.m */,
+			);
+			path = "UIVIew-分类";
+			sourceTree = "<group>";
+		};
+		FBD18EE72013156E0094AC0F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBD18EE8201315880094AC0F /* XYSettingViewController.h */,
+				FBD18EE9201315880094AC0F /* XYSettingViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3624,6 +3763,7 @@
 				CBCE4F5D1EDF107A00E2CD38 /* UIImage+JKRemoteSize.m in Sources */,
 				1C1DB6601EF7805A000E6AEF /* UIButton+HT.m in Sources */,
 				CBCE4F6A1EDF107A00E2CD38 /* UILabel+JKAutoSize.m in Sources */,
+				FB7E7CA62012E3F100158EF9 /* HTMainAccountsModel.m in Sources */,
 				1C8386CE1EB063DB006A8A71 /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				CBCE4F021EDF107A00E2CD38 /* NSObject+JKBlocks.m in Sources */,
 				1C5EDEFC1EC3179500002A46 /* JJMainScrollView.m in Sources */,
@@ -3633,6 +3773,7 @@
 				1C8386C81EB063DB006A8A71 /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				CBCE4F601EDF107A00E2CD38 /* UIImage+JKSuperCompress.m in Sources */,
 				1C0639931EB7AF290039FEDC /* HTColorManager.m in Sources */,
+				FB7E7CB72013121B00158EF9 /* XYTabBarController.m in Sources */,
 				1C5EDEE81EC2EBAC00002A46 /* CYTabBar.m in Sources */,
 				1C5EDF441EC4097E00002A46 /* YYTextMagnifier.m in Sources */,
 				CBCE4EF81EDF107A00E2CD38 /* NSNotificationCenter+JKMainThread.m in Sources */,
@@ -3769,6 +3910,7 @@
 				1C0639841EB653280039FEDC /* HTSelectIconTypeView.m in Sources */,
 				1C8386B41EB063DB006A8A71 /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				CB4981EF1EA61D3F000E0792 /* PopoverView.m in Sources */,
+				FBD18EEA201315880094AC0F /* XYSettingViewController.m in Sources */,
 				1C0639881EB658830039FEDC /* HTSelectIconTypeCell.m in Sources */,
 				1C8386B81EB063DB006A8A71 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
 				CBCE4F371EDF107A00E2CD38 /* UIBezierPath+JKBasicShapes.m in Sources */,
@@ -3885,6 +4027,7 @@
 				CBCE4F2C1EDF107A00E2CD38 /* CALayer+JKBorderColor.m in Sources */,
 				1C5EDF491EC4097E00002A46 /* YYTextRubyAnnotation.m in Sources */,
 				FB7E7C842011DDE800158EF9 /* UIPageControl+Night.m in Sources */,
+				FB7E7CAB201310DB00158EF9 /* HTKindSelectVC.m in Sources */,
 				1C8386CF1EB063DB006A8A71 /* DGActivityIndicatorView.m in Sources */,
 				1C8386C61EB063DB006A8A71 /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
 				CBCE4FA01EDF107B00E2CD38 /* UIWebView+JKStyle.m in Sources */,
@@ -3912,6 +4055,7 @@
 				1C8386CA1EB063DB006A8A71 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				CBCE4F8E1EDF107A00E2CD38 /* UIView+JKNib.m in Sources */,
 				1C5EDF3E1EC4097E00002A46 /* YYTextDebugOption.m in Sources */,
+				FB7E7CB4201311C400158EF9 /* XYBaseViewController.m in Sources */,
 				CBCE4F901EDF107A00E2CD38 /* UIView+JKScreenshot.m in Sources */,
 				CBCE4F041EDF107A00E2CD38 /* NSObject+JKEasyCopy.m in Sources */,
 				CBCE4F7D1EDF107A00E2CD38 /* UITableViewCell+JKNIB.m in Sources */,
@@ -3939,9 +4083,11 @@
 				CBCE4F921EDF107A00E2CD38 /* UIView+JKToast.m in Sources */,
 				FB7E7C912011DDE800158EF9 /* CAShapeLayer+Night.m in Sources */,
 				CBCE4F0A1EDF107A00E2CD38 /* NSSet+JKBlock.m in Sources */,
+				FB815E6D2013211D00327A43 /* XYNavigationController.m in Sources */,
 				1C5EDF501EC4097F00002A46 /* YYTextTransaction.m in Sources */,
 				CBCE4F551EDF107A00E2CD38 /* UIImage+JKBlur.m in Sources */,
 				CBCE4F001EDF107A00E2CD38 /* NSObject+JKAssociatedObject.m in Sources */,
+				FB7E7CB02013112E00158EF9 /* HTKindAddVC.m in Sources */,
 				CBCE4EE81EDF107A00E2CD38 /* NSDate+JKUtilities.m in Sources */,
 				1C8386B91EB063DB006A8A71 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				CBCE4F791EDF107A00E2CD38 /* UISearchBar+JKBlocks.m in Sources */,

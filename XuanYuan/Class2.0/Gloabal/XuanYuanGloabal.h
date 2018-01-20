@@ -9,11 +9,20 @@
 #ifndef XuanYuanGloabal_h
 #define XuanYuanGloabal_h
 
+#import <Realm/Realm.h>
+#import "XYBaseViewController.h"
+#import "HTMainAccountsModel.h"
+#import "UIScrollView+EmptyDataSet.h"
 
 #define XuanYuanAeskey @"cn.niesiyang.aeskey"
 //偏好设置
 //主题颜色色值 为nil时 显示蓝色
 #define kMainColorUserDefaults @"kMainColorUserDefaults"
+
+//主题类型
+#define DKNormal [DKNightVersionManager sharedManager].themeVersion = DKThemeVersionNormal;
+#define DKNight  [DKNightVersionManager sharedManager].themeVersion = DKThemeVersionNight;
+
 //密码
 #define kPasswordUserDefaults @"kPasswordUserDefaults"
 //是否启用密码  @YES--启用   @NO-关闭

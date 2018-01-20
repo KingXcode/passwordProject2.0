@@ -33,14 +33,10 @@
 
 
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    UIViewController *vc = [[UIViewController alloc]init];
-    vc.view.backgroundColor = [UIColor whiteColor];
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = vc;
-    [self.window makeKeyAndVisible];
+    [self creatDataBaseWithName:@"t_user"];
+    
     
     return YES;
 }
@@ -83,5 +79,25 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (void)creatDataBaseWithName:(NSString *)databaseName
+{
+    NSString *path = [HTTools ht_sandbox_getDocuments];
+    NSString *filePath = [path stringByAppendingPathComponent:databaseName];
+    
+    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    config.fileURL = [NSURL URLWithString:filePath];
+    config.readOnly = NO;
+    int currentVersion = 1.0;
+    config.schemaVersion = currentVersion;
+    config.migrationBlock = ^(RLMMigration *migration , uint64_t oldSchemaVersion) {
+        // 这里是设置数据迁移的block
+        if (oldSchemaVersion < currentVersion) {
+            //暂时无迁移
+        }
+    };
+    [RLMRealmConfiguration setDefaultConfiguration:config];
+    
+}
 
 @end
