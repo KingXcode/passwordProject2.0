@@ -411,6 +411,8 @@
 		CBF588FF1EA3AA2900E7327B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF588FD1EA3AA2900E7327B /* Main.storyboard */; };
 		CBF589011EA3AA2900E7327B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF589001EA3AA2900E7327B /* Assets.xcassets */; };
 		CBF589041EA3AA2900E7327B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF589021EA3AA2900E7327B /* LaunchScreen.storyboard */; };
+		FB2D588A201493270031D063 /* HTAcountAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D5888201493270031D063 /* HTAcountAddCell.m */; };
+		FB2D588B201493270031D063 /* HTAcountAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB2D5889201493270031D063 /* HTAcountAddCell.xib */; };
 		FB7E7C722011DDE800158EF9 /* DKNightVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7C282011DDE700158EF9 /* DKNightVersionManager.m */; };
 		FB7E7C732011DDE800158EF9 /* NSObject+Night.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7C292011DDE700158EF9 /* NSObject+Night.m */; };
 		FB7E7C742011DDE800158EF9 /* DKAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7C2A2011DDE700158EF9 /* DKAlpha.m */; };
@@ -1270,6 +1272,9 @@
 		CBF589001EA3AA2900E7327B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBF589031EA3AA2900E7327B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBF589051EA3AA2900E7327B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB2D5887201493270031D063 /* HTAcountAddCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountAddCell.h; sourceTree = "<group>"; };
+		FB2D5888201493270031D063 /* HTAcountAddCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountAddCell.m; sourceTree = "<group>"; };
+		FB2D5889201493270031D063 /* HTAcountAddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTAcountAddCell.xib; sourceTree = "<group>"; };
 		FB7E7C282011DDE700158EF9 /* DKNightVersionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKNightVersionManager.m; sourceTree = "<group>"; };
 		FB7E7C292011DDE700158EF9 /* NSObject+Night.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Night.m"; sourceTree = "<group>"; };
 		FB7E7C2A2011DDE700158EF9 /* DKAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAlpha.m; sourceTree = "<group>"; };
@@ -3592,6 +3597,9 @@
 				FB815E7B2014443F00327A43 /* HTAcountAddHeaderCell.h */,
 				FB815E7C2014443F00327A43 /* HTAcountAddHeaderCell.m */,
 				FB815E7D2014443F00327A43 /* HTAcountAddHeaderCell.xib */,
+				FB2D5887201493270031D063 /* HTAcountAddCell.h */,
+				FB2D5888201493270031D063 /* HTAcountAddCell.m */,
+				FB2D5889201493270031D063 /* HTAcountAddCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3680,6 +3688,7 @@
 				1C4EB2D81EA4AEB7009A1B3D /* HTAddItemsCell.xib in Resources */,
 				FB7E7C902011DDE800158EF9 /* Info.plist in Resources */,
 				FB7E7C872011DDE800158EF9 /* DKColorTable.txt in Resources */,
+				FB2D588B201493270031D063 /* HTAcountAddCell.xib in Resources */,
 				1C5EDEE71EC2EBAC00002A46 /* CYTabBar.bundle in Resources */,
 				1C8808E61EBC2CE8002F4B37 /* HTAccessView.xib in Resources */,
 				1C0639891EB658830039FEDC /* HTSelectIconTypeCell.xib in Resources */,
@@ -4141,6 +4150,7 @@
 				CBCE4F961EDF107A00E2CD38 /* UIViewController+JKBlockSegue.m in Sources */,
 				CBCE4F731EDF107A00E2CD38 /* UIPopoverController+iPhone.m in Sources */,
 				CBCE4F571EDF107A00E2CD38 /* UIImage+JKColor.m in Sources */,
+				FB2D588A201493270031D063 /* HTAcountAddCell.m in Sources */,
 				1C5EDF4B1EC4097E00002A46 /* NSAttributedString+YYText.m in Sources */,
 				CBCE4EDB1EDF107A00E2CD38 /* NSData+JKAPNSToken.m in Sources */,
 				1C5EDF4E1EC4097F00002A46 /* UIView+YYText.m in Sources */,

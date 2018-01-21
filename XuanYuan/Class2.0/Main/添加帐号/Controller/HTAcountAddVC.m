@@ -8,6 +8,7 @@
 
 #import "HTAcountAddVC.h"
 #import "HTAcountAddHeaderCell.h"
+#import "HTAcountAddCell.h"
 
 @interface HTAcountAddVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,weak) UITableView * tableView;
@@ -35,7 +36,7 @@
 
 -(void)loadData
 {
-    _saveModel = [[HTMainAccountsModel alloc]initWithValue:@{@"k_id":@"niesiyang_0",@"accountTitle":@"帐号信息"}];
+    _saveModel = [[HTMainAccountsModel alloc]initWithValue:@{@"k_id":@"niesiyang_0",@"creatTime":@([[NSDate date]timeIntervalSince1970]).stringValue}];
 
     _sectionArray = [NSMutableArray array];
     [_sectionArray addObject:@[@"登录信息"]];
@@ -57,6 +58,7 @@
     tableView.estimatedSectionHeaderHeight = 0;
     tableView.estimatedSectionFooterHeight = 0;
     [tableView registerNib:[UINib nibWithNibName:@"HTAcountAddHeaderCell" bundle:nil] forCellReuseIdentifier:@"HTAcountAddHeaderCell"];
+    [tableView registerNib:[UINib nibWithNibName:@"HTAcountAddCell" bundle:nil] forCellReuseIdentifier:@"HTAcountAddCell"];
     self.tableView = tableView;
     [self.view addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -79,12 +81,26 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *title = self.sectionArray[indexPath.section][indexPath.row];
-    
+    __weak typeof(self) __self = self;
     if ([title isEqualToString:@"登录信息"]) {
         HTAcountAddHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAcountAddHeaderCell" forIndexPath:indexPath];
         cell.iconImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"type_%@",@(self.saveModel.iconType)]];
+        [cell configText:self.saveModel.accountTitle];
+        [cell setTextChange:^(NSString *text) {
+            __self.saveModel.accountTitle = text;
+        }];
         return cell;
     }
+    
+    if ([title isEqualToString:@"帐号"]) {
+        HTAcountAddCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAcountAddCell" forIndexPath:indexPath];
+        [cell configText:self.saveModel.account];
+        [cell setTextChange:^(NSString *text) {
+            __self.saveModel.account = text;
+        }];
+        return cell;
+    }
+    
     return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
 }
 
@@ -94,6 +110,9 @@
 
     if ([title isEqualToString:@"登录信息"]) {
         return 80;
+    }
+    if ([title isEqualToString:@"帐号"]) {
+        return 63;
     }
     return 0;
 }
