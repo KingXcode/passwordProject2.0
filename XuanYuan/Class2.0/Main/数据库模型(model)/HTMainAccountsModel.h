@@ -28,10 +28,8 @@ RLM_ARRAY_TYPE(HTMainAccountsSubModel)
 @property  NSString * remarks;      //备注            可以为空
 @property  BOOL       isCollect;    //是否被收藏
 @property  NSInteger  iconType;     //icon类型,实际上只是为了取图标使用  默认为0;
-/**
- 辅助密码信息 例如:交易密码,其它非登录密码信息
- */
-@property  RLMArray<HTMainAccountsSubModel *> *infoPassWord;
+
+@property  RLMArray<HTMainAccountsSubModel> *infoPassWord;//辅助密码信息 例如:交易密码,其它非登录密码信息
 @end
 RLM_ARRAY_TYPE(HTMainAccountsModel)
 

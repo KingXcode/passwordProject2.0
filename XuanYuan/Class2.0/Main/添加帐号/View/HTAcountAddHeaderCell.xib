@@ -26,31 +26,42 @@
                             <constraint firstAttribute="width" constant="60" id="RPz-AX-3Ix"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXG-Ne-z26">
-                        <rect key="frame" x="84" y="10" width="228" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oj8-Jb-m1H">
-                        <rect key="frame" x="84" y="36" width="228" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkg-No-Ze1">
+                        <rect key="frame" x="88" y="20.5" width="216" height="40"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="登录信息  名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RN-7F-rsI">
+                                <rect key="frame" x="0.0" y="0.0" width="216" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZqQ-tt-XFX"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="Hxa-Xz-dnQ"/>
+                            <constraint firstItem="2RN-7F-rsI" firstAttribute="top" secondItem="dkg-No-Ze1" secondAttribute="top" id="JCp-by-mVO"/>
+                            <constraint firstItem="2RN-7F-rsI" firstAttribute="leading" secondItem="dkg-No-Ze1" secondAttribute="leading" id="lQy-gT-cfs"/>
+                            <constraint firstAttribute="trailing" secondItem="2RN-7F-rsI" secondAttribute="trailing" id="muS-HL-66A"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="dkg-No-Ze1" secondAttribute="trailing" constant="16" id="0Aa-Gr-dht"/>
                     <constraint firstItem="6P5-my-vnM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1Ja-wc-CCl"/>
-                    <constraint firstItem="oj8-Jb-m1H" firstAttribute="top" secondItem="AXG-Ne-z26" secondAttribute="bottom" constant="8" id="6Qx-By-Y7c"/>
-                    <constraint firstItem="oj8-Jb-m1H" firstAttribute="leading" secondItem="6P5-my-vnM" secondAttribute="trailing" constant="8" id="HAj-VS-1Dg"/>
-                    <constraint firstAttribute="trailing" secondItem="AXG-Ne-z26" secondAttribute="trailing" constant="8" id="KYl-2i-iWN"/>
+                    <constraint firstItem="dkg-No-Ze1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UWD-NO-cNM"/>
                     <constraint firstItem="6P5-my-vnM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="VMm-Xl-dzA"/>
-                    <constraint firstAttribute="trailing" secondItem="oj8-Jb-m1H" secondAttribute="trailing" constant="8" id="c8L-if-sFA"/>
-                    <constraint firstItem="AXG-Ne-z26" firstAttribute="leading" secondItem="6P5-my-vnM" secondAttribute="trailing" constant="8" id="dgO-7f-yF1"/>
-                    <constraint firstItem="AXG-Ne-z26" firstAttribute="top" secondItem="6P5-my-vnM" secondAttribute="top" id="gWo-jb-zyP"/>
+                    <constraint firstItem="dkg-No-Ze1" firstAttribute="leading" secondItem="6P5-my-vnM" secondAttribute="trailing" constant="12" id="Wt2-8P-Joh"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="iconImage" destination="6P5-my-vnM" id="Nq1-Jn-cwZ"/>
+                <outlet property="inputBgView" destination="dkg-No-Ze1" id="0i6-Y6-2a6"/>
+                <outlet property="inputTextField" destination="2RN-7F-rsI" id="54g-dF-6dH"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

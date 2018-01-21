@@ -12,6 +12,9 @@
 @interface HTAcountAddVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,weak) UITableView * tableView;
 @property (nonatomic,strong) HTMainAccountsModel * saveModel;
+
+@property (nonatomic,strong) NSMutableArray * sectionArray;
+
 @end
 
 @implementation HTAcountAddVC
@@ -20,9 +23,7 @@
 {
     self = [super init];
     if (self) {
-        _saveModel = [[HTMainAccountsModel alloc]init];
-        _saveModel.k_id = @"niesiyang_0";
-        _saveModel.accountTitle = @"帐号信息";
+        [self loadData];
     }
     return self;
 }
@@ -30,6 +31,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self creatUI];
+}
+
+-(void)loadData
+{
+    _saveModel = [[HTMainAccountsModel alloc]initWithValue:@{@"k_id":@"niesiyang_0",@"accountTitle":@"帐号信息"}];
+
+    _sectionArray = [NSMutableArray array];
+    [_sectionArray addObject:@[@"登录信息"]];
+    [_sectionArray addObject:@[@"账号",
+                               @"密码"]];
+
 }
 
 -(void)creatUI
@@ -44,7 +56,6 @@
     tableView.estimatedRowHeight = 0;
     tableView.estimatedSectionHeaderHeight = 0;
     tableView.estimatedSectionFooterHeight = 0;
-    tableView.rowHeight = UITableViewAutomaticDimension;
     [tableView registerNib:[UINib nibWithNibName:@"HTAcountAddHeaderCell" bundle:nil] forCellReuseIdentifier:@"HTAcountAddHeaderCell"];
     self.tableView = tableView;
     [self.view addSubview:tableView];
@@ -57,20 +68,44 @@
 #pragma -mark- tableView delegate  datasuoce
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return self.sectionArray.count;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 0) {
-        HTAcountAddHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAcountAddHeaderCell" forIndexPath:@"HTAcountAddHeaderCell"];
-    }
-    return nil;
+    NSArray *array = self.sectionArray[section];
+    return array.count;
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *title = self.sectionArray[indexPath.section][indexPath.row];
+    
+    if ([title isEqualToString:@"登录信息"]) {
+        HTAcountAddHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAcountAddHeaderCell" forIndexPath:indexPath];
+        cell.iconImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"type_%@",@(self.saveModel.iconType)]];
+        return cell;
+    }
+    return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *title = self.sectionArray[indexPath.section][indexPath.row];
+
+    if ([title isEqualToString:@"登录信息"]) {
+        return 80;
+    }
+    return 0;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    
+    if (section == 0) {
+        return 10;
+    }
+    return 0.1;
+}
 
 
 

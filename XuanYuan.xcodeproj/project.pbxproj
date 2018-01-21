@@ -3498,10 +3498,8 @@
 		FB7E7CA02011F48D00158EF9 /* 添加帐号 */ = {
 			isa = PBXGroup;
 			children = (
+				FB815E8020148D3D00327A43 /* View */,
 				FB7E7CA72012E85900158EF9 /* Controller */,
-				FB815E7B2014443F00327A43 /* HTAcountAddHeaderCell.h */,
-				FB815E7C2014443F00327A43 /* HTAcountAddHeaderCell.m */,
-				FB815E7D2014443F00327A43 /* HTAcountAddHeaderCell.xib */,
 			);
 			path = "添加帐号";
 			sourceTree = "<group>";
@@ -3586,6 +3584,16 @@
 				1C4EB27C1EA455B2009A1B3D /* UIView+AddClick.m */,
 			);
 			path = "UIVIew-分类";
+			sourceTree = "<group>";
+		};
+		FB815E8020148D3D00327A43 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB815E7B2014443F00327A43 /* HTAcountAddHeaderCell.h */,
+				FB815E7C2014443F00327A43 /* HTAcountAddHeaderCell.m */,
+				FB815E7D2014443F00327A43 /* HTAcountAddHeaderCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FBD18EE72013156E0094AC0F /* Controller */ = {

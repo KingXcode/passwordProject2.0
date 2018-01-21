@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HTAcountAddHeaderCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *iconImage;
+
 
 @end
