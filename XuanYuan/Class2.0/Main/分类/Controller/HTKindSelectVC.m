@@ -32,19 +32,12 @@
 }
 
 
+
 -(void)configNavigationBar
 {
-    
-    [self.navigationController.navigationBar dk_setTintColorPicker:^UIColor *(DKThemeVersion *themeVersion) {
-        if ([themeVersion isEqualToString:DKThemeVersionNormal])
-        {
-            return RGBHex(0x428AF7);
-        }else
-        {
-            return RGBHex(0x428AF7);
-        }
-    }];
-    
+
+    self.title = @"分类";
+    self.navigationController.navigationBar.dk_barTintColorPicker = DKColorPickerWithKey(NavigationBarTintColor);
     
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightBtn dk_setImage:^UIImage *(DKThemeVersion *themeVersion) {
@@ -57,8 +50,10 @@
         }
     } forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
+    __weak typeof(self) __self = self;
     [rightBtn addClickBlock:^(id obj) {
-        
+        HTKindAddVC *vc = [[HTKindAddVC alloc]init];
+        [__self.navigationController pushViewController:vc animated:YES];
     }];
     
 }
@@ -100,6 +95,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.dk_textColorPicker = DKColorPickerWithKey(textColor_0);
     }
     RLMResults<HTMainAccountsKindModel *> *modelList = [HTMainAccountsKindModel allObjects];
     HTMainAccountsKindModel *model = [modelList objectAtIndex:indexPath.row];

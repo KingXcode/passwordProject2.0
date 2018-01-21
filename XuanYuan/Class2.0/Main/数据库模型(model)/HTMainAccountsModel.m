@@ -37,3 +37,9 @@
     return @[@"kindName"];
 }
 @end
+
+
+
+@implementation HTMainAccountsKindItem
+
+@end

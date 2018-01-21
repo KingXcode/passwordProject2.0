@@ -453,6 +453,11 @@
 		FB7E7CB4201311C400158EF9 /* XYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7CB3201311C400158EF9 /* XYBaseViewController.m */; };
 		FB7E7CB72013121B00158EF9 /* XYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7CB62013121B00158EF9 /* XYTabBarController.m */; };
 		FB815E6D2013211D00327A43 /* XYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB815E6C2013211D00327A43 /* XYNavigationController.m */; };
+		FB815E742014250000327A43 /* kindList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB815E732014250000327A43 /* kindList.plist */; };
+		FB815E7720142DC400327A43 /* UIView+HTBorderLine.m in Sources */ = {isa = PBXBuildFile; fileRef = FB815E7620142DC300327A43 /* UIView+HTBorderLine.m */; };
+		FB815E7A20143ABE00327A43 /* HTAcountAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB815E7920143ABE00327A43 /* HTAcountAddVC.m */; };
+		FB815E7E2014443F00327A43 /* HTAcountAddHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB815E7C2014443F00327A43 /* HTAcountAddHeaderCell.m */; };
+		FB815E7F2014443F00327A43 /* HTAcountAddHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB815E7D2014443F00327A43 /* HTAcountAddHeaderCell.xib */; };
 		FBD18EEA201315880094AC0F /* XYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD18EE9201315880094AC0F /* XYSettingViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -1350,6 +1355,14 @@
 		FB7E7CB62013121B00158EF9 /* XYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYTabBarController.m; sourceTree = "<group>"; };
 		FB815E6B2013211D00327A43 /* XYNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNavigationController.h; sourceTree = "<group>"; };
 		FB815E6C2013211D00327A43 /* XYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNavigationController.m; sourceTree = "<group>"; };
+		FB815E732014250000327A43 /* kindList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = kindList.plist; sourceTree = "<group>"; };
+		FB815E7520142DC300327A43 /* UIView+HTBorderLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HTBorderLine.h"; sourceTree = "<group>"; };
+		FB815E7620142DC300327A43 /* UIView+HTBorderLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTBorderLine.m"; sourceTree = "<group>"; };
+		FB815E7820143ABE00327A43 /* HTAcountAddVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountAddVC.h; sourceTree = "<group>"; };
+		FB815E7920143ABE00327A43 /* HTAcountAddVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountAddVC.m; sourceTree = "<group>"; };
+		FB815E7B2014443F00327A43 /* HTAcountAddHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountAddHeaderCell.h; sourceTree = "<group>"; };
+		FB815E7C2014443F00327A43 /* HTAcountAddHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountAddHeaderCell.m; sourceTree = "<group>"; };
+		FB815E7D2014443F00327A43 /* HTAcountAddHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTAcountAddHeaderCell.xib; sourceTree = "<group>"; };
 		FBD18EE8201315880094AC0F /* XYSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYSettingViewController.h; sourceTree = "<group>"; };
 		FBD18EE9201315880094AC0F /* XYSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1452,6 +1465,8 @@
 		1C1DB6371EF7805A000E6AEF /* UIKit+Category */ = {
 			isa = PBXGroup;
 			children = (
+				FB815E7520142DC300327A43 /* UIView+HTBorderLine.h */,
+				FB815E7620142DC300327A43 /* UIView+HTBorderLine.m */,
 				1C1DB6381EF7805A000E6AEF /* UIButton+HT.h */,
 				1C1DB6391EF7805A000E6AEF /* UIButton+HT.m */,
 				1C1DB63A1EF7805A000E6AEF /* UIControl+HTSound.h */,
@@ -3484,6 +3499,9 @@
 			isa = PBXGroup;
 			children = (
 				FB7E7CA72012E85900158EF9 /* Controller */,
+				FB815E7B2014443F00327A43 /* HTAcountAddHeaderCell.h */,
+				FB815E7C2014443F00327A43 /* HTAcountAddHeaderCell.m */,
+				FB815E7D2014443F00327A43 /* HTAcountAddHeaderCell.xib */,
 			);
 			path = "添加帐号";
 			sourceTree = "<group>";
@@ -3508,6 +3526,7 @@
 			children = (
 				FB7E7CA42012E3F100158EF9 /* HTMainAccountsModel.h */,
 				FB7E7CA52012E3F100158EF9 /* HTMainAccountsModel.m */,
+				FB815E732014250000327A43 /* kindList.plist */,
 			);
 			path = "数据库模型(model)";
 			sourceTree = "<group>";
@@ -3515,6 +3534,8 @@
 		FB7E7CA72012E85900158EF9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FB815E7820143ABE00327A43 /* HTAcountAddVC.h */,
+				FB815E7920143ABE00327A43 /* HTAcountAddVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3639,10 +3660,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB815E7F2014443F00327A43 /* HTAcountAddHeaderCell.xib in Resources */,
 				CB898BDD1EBB804600989106 /* photoShutter2.caf in Resources */,
 				1C4EB2C61EA4A665009A1B3D /* Info.plist in Resources */,
 				CB4981F91EA660A8000E0792 /* ClassificationCell.xib in Resources */,
 				1C895EF61EB5E6D000ACBED0 /* LICENSE in Resources */,
+				FB815E742014250000327A43 /* kindList.plist in Resources */,
 				1C5EDF001EC3179500002A46 /* none.png in Resources */,
 				CBF589041EA3AA2900E7327B /* LaunchScreen.storyboard in Resources */,
 				1C8386DE1EB0816C006A8A71 /* HTEditItemsCell.xib in Resources */,
@@ -3729,6 +3752,7 @@
 				CBCE4F841EDF107A00E2CD38 /* UITextView+JKPinchZoom.m in Sources */,
 				CBCE4F3C1EDF107A00E2CD38 /* UIButton+JKBackgroundColor.m in Sources */,
 				CBCE4F321EDF107A00E2CD38 /* UIApplication+JKKeyboardFrame.m in Sources */,
+				FB815E7720142DC400327A43 /* UIView+HTBorderLine.m in Sources */,
 				CBCE4F9B1EDF107B00E2CD38 /* UIWebView+JKCanvas.m in Sources */,
 				1C24D23A1EB96E22009F1592 /* NSObject+ZYSuspensionView.m in Sources */,
 				CBCE4F481EDF107A00E2CD38 /* UIColor+JKRandom.m in Sources */,
@@ -3794,6 +3818,7 @@
 				1C4EB2841EA455B2009A1B3D /* UINavigationController+JWPageJumpTool.m in Sources */,
 				1CA71B421EADF1B80071312F /* ClassificationModel.m in Sources */,
 				CBCE4F5C1EDF107A00E2CD38 /* UIImage+JKOrientation.m in Sources */,
+				FB815E7E2014443F00327A43 /* HTAcountAddHeaderCell.m in Sources */,
 				1C4EB2C91EA4A665009A1B3D /* KaedeTextField.swift in Sources */,
 				CBCE4F221EDF107A00E2CD38 /* NSURLConnection+JKSelfSigned.m in Sources */,
 				FB7E7C742011DDE800158EF9 /* DKAlpha.m in Sources */,
@@ -3938,6 +3963,7 @@
 				1C1DB65F1EF7805A000E6AEF /* HTTools.m in Sources */,
 				CBCE4F471EDF107A00E2CD38 /* UIColor+JKModify.m in Sources */,
 				CBCE4F931EDF107A00E2CD38 /* UIView+JKVisuals.m in Sources */,
+				FB815E7A20143ABE00327A43 /* HTAcountAddVC.m in Sources */,
 				CB4981F81EA660A8000E0792 /* ClassificationCell.m in Sources */,
 				CBCE4EF21EDF107A00E2CD38 /* NSFileHandle+JKReadLine.m in Sources */,
 				CBCE4F6F1EDF107A00E2CD38 /* UINavigationController+JKTransitions.m in Sources */,

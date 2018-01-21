@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>kIconType</key>
+		<string>000</string>
+		<key>k_id</key>
+		<string>niesiyang_0</string>
+		<key>kindName</key>
+		<string>帐号信息</string>
+	</dict>
+	<dict>
+		<key>kIconType</key>
+		<string>111</string>
+		<key>k_id</key>
+		<string>niesiyang_1</string>
+		<key>kindName</key>
+		<string>备注</string>
+	</dict>
+</array>
+</plist>

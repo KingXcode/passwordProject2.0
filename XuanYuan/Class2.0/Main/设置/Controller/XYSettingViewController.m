@@ -23,15 +23,8 @@
 
 -(void)configNavigationBar
 {
-    [self.navigationController.navigationBar dk_setTintColorPicker:^UIColor *(DKThemeVersion *themeVersion) {
-        if ([themeVersion isEqualToString:DKThemeVersionNormal])
-        {
-            return RGBHex(0xffffff);
-        }else
-        {
-            return RGBHex(0xffffff);
-        }
-    }];
+    self.navigationController.navigationBar.dk_barTintColorPicker = DKColorPickerWithKey(NavigationBarSettingTintColor);
+
 }
 
 

@@ -12,7 +12,6 @@
 #import <Realm/Realm.h>
 #import "XYBaseViewController.h"
 #import "HTMainAccountsModel.h"
-#import "UIScrollView+EmptyDataSet.h"
 
 #define XuanYuanAeskey @"cn.niesiyang.aeskey"
 //偏好设置

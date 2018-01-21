@@ -7,6 +7,7 @@
 //
 
 #import <Realm/Realm.h>
+#import <Foundation/Foundation.h>
 
 @interface HTMainAccountsSubModel : RLMObject
 @property  NSString * subTitle;//辅助密码名称  *******  必须不为空
@@ -20,6 +21,7 @@ RLM_ARRAY_TYPE(HTMainAccountsSubModel)
 @interface HTMainAccountsModel : RLMObject
 @property  NSString * k_id;         //分类id   *******   必须不为空
 @property  NSString * creatTime;    //创建时间
+@property  NSString * changeTime;   //修改时间
 @property  NSString * accountTitle; //标题  *******   必须不为空
 @property  NSString * account;      //账号            可以为空
 @property  NSString * password;     //密码            可以为空
@@ -34,9 +36,35 @@ RLM_ARRAY_TYPE(HTMainAccountsSubModel)
 RLM_ARRAY_TYPE(HTMainAccountsModel)
 
 
+
+
+
+
+
+
+
+
+
+
+
 @interface HTMainAccountsKindModel : RLMObject
 @property  NSString * kindName;
 @property  NSInteger  kIconType;     //icon类型,实际上只是为了取图标使用  默认为0;
-@property  NSString * k_id;          //生成方式以当前时间为准进行md5
+@property  NSString * k_id;          
 @end
 RLM_ARRAY_TYPE(HTMainAccountsKindModel)
+
+//此模型中的数据对应kindlist.plist
+@interface HTMainAccountsKindItem : NSObject
+@property (nonatomic,copy) NSString * kindName;
+@property (nonatomic,assign) NSInteger  kIconType;
+@property (nonatomic,copy) NSString * k_id;
+@end
+
+
+
+
+
+
+
+

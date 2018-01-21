@@ -7,17 +7,116 @@
 //
 
 #import "HTKindAddVC.h"
+#import "HTToolSet.h"
+#import "HTAcountAddVC.h"
 
-@interface HTKindAddVC ()
-
+@interface HTKindAddVC ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic,weak) UITableView * tableView;
+@property (nonatomic,strong) NSMutableArray<HTMainAccountsKindItem *> * dataArray;
 @end
 
 @implementation HTKindAddVC
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self loadData];
+    }
+    return self;
+}
+
+-(void)loadData
+{
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"kindList" ofType:@"plist"];
+    NSArray *array = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
+    
+    NSMutableArray *dataArray = [NSMutableArray array];
+    for (NSDictionary *dict in array) {
+        HTMainAccountsKindItem *item = [HTMainAccountsKindItem mj_objectWithKeyValues:dict];
+        [dataArray addObject:item];
+    }
+    _dataArray = dataArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"选择分类";
+    [self creatUI];
+    self.hidesBottomBarWhenPushed = YES;
+
 }
+
+
+
+-(void)creatUI
+{
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.bounces = NO;
+    tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    tableView.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewBackgroundColor);
+    tableView.estimatedRowHeight = 0;
+    tableView.estimatedSectionHeaderHeight = 0;
+    tableView.estimatedSectionFooterHeight = 0;
+    self.tableView = tableView;
+    [self.view addSubview:tableView];
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view);
+        make.left.bottom.right.equalTo(self.view);
+    }];
+}
+
+#pragma -mark- tableView delegate  datasuoce
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataArray.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.textLabel.font = [UIFont systemFontOfSize:15];
+        cell.textLabel.dk_textColorPicker = DKColorPickerWithKey(textColor_0);
+        [cell ht_bottomLineShow];
+    }
+    HTMainAccountsKindItem *model = self.dataArray[indexPath.row];
+    cell.textLabel.text = model.kindName;
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    HTMainAccountsKindItem *model = self.dataArray[indexPath.row];
+    if ([model.k_id isEqualToString:@"niesiyang_0"])
+    {//帐号信息
+        HTAcountAddVC *vc = [[HTAcountAddVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if ([model.k_id isEqualToString:@"niesiyang_1"])
+    {//备忘录
+    
+    }
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

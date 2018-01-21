@@ -36,6 +36,7 @@
 #import "UIControl+HTSound.h"
 #import "UIButton+HT.h"
 #import "UILabel+HTSpace.h"
+#import "UIView+HTBorderLine.h"
 
 //Foundatiion
 #import "NSDate+HTExtension.h"
