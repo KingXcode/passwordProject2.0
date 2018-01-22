@@ -18,6 +18,7 @@
 
 -(void)configText:(NSString *)text
 {
+    self.inputTextField.text = nil;
     if (![HTTools ht_isBlankString:text]) {
         self.inputTextField.text = text;
     }
@@ -29,6 +30,7 @@
     [self.inputBgView ht_bottomLineShow];
     [self.iconImage ht_setBorderWidth:0.5 Color:RGBHex(0xe1e1e1)];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     __weak typeof(self) __self = self;
     [self.inputTextField ht_editingChanged:^{
         if (__self.inputTextField.markedTextRange == nil) {

@@ -44,7 +44,6 @@
     // Do any additional setup after loading the view.
     self.title = @"选择分类";
     [self creatUI];
-    self.hidesBottomBarWhenPushed = YES;
 
 }
 

@@ -10,4 +10,7 @@
 
 @interface HTAcountAddVC : XYBaseViewController
 
+//需要编辑的模型的kid
+@property (nonatomic,copy) NSString * a_id;
+
 @end

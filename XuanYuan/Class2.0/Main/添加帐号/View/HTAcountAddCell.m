@@ -18,6 +18,7 @@
 
 -(void)configText:(NSString *)text
 {
+    self.inputAcountLabe.text = nil;
     if (![HTTools ht_isBlankString:text]) {
         self.inputAcountLabel.text = text;
     }
@@ -26,10 +27,13 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+
     [self ht_bottomLineShow];
     [self ht_bottomLineLeftAndRightMargins:HTMarginsMake(16, 0)];
+    self.titleLabel.dk_textColorPicker = DKColorPickerWithKey(textColor_1);
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    __weak typeof(self) __self = self;
+    
+    __weak typeof(self) __self = self;    
     [self.inputAcountLabel ht_editingChanged:^{
         if (__self.inputAcountLabel.markedTextRange == nil) {
             if (__self.textChange) {

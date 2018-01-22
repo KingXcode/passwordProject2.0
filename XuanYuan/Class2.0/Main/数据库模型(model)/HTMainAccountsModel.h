@@ -20,9 +20,12 @@ RLM_ARRAY_TYPE(HTMainAccountsSubModel)
 
 @interface HTMainAccountsModel : RLMObject
 @property  NSString * k_id;         //分类id   *******   必须不为空
+@property  NSString * a_id;         //账号id   *******   必须不为空
+@property  NSString * accountTitle; //标题  *******      必须不为空
+
 @property  NSString * creatTime;    //创建时间
 @property  NSString * changeTime;   //修改时间
-@property  NSString * accountTitle; //标题  *******   必须不为空
+
 @property  NSString * account;      //账号            可以为空
 @property  NSString * password;     //密码            可以为空
 @property  NSString * remarks;      //备注            可以为空

@@ -34,7 +34,7 @@
 
 @implementation HTMainAccountsKindModel
 + (NSArray *)requiredProperties {
-    return @[@"kindName"];
+    return @[@"kindName",@"k_id"];
 }
 @end
 

@@ -194,6 +194,10 @@
 		CB898BDB1EBB7A3D00989106 /* HTCheckPasswordErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB898BDA1EBB7A3D00989106 /* HTCheckPasswordErrorModel.m */; };
 		CB898BDD1EBB804600989106 /* photoShutter2.caf in Resources */ = {isa = PBXBuildFile; fileRef = CB898BDC1EBB804600989106 /* photoShutter2.caf */; };
 		CBAAB0A61EB2600300B1C679 /* HYCollectViewAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAAB0A51EB2600300B1C679 /* HYCollectViewAlignedLayout.m */; };
+		CBC62E022015C1680050A3EF /* HTPassWordAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC62E002015C1680050A3EF /* HTPassWordAddCell.m */; };
+		CBC62E032015C1680050A3EF /* HTPassWordAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC62E012015C1680050A3EF /* HTPassWordAddCell.xib */; };
+		CBC62E072015E8180050A3EF /* HTInfoPassWordAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC62E052015E8180050A3EF /* HTInfoPassWordAddCell.m */; };
+		CBC62E082015E8180050A3EF /* HTInfoPassWordAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC62E062015E8180050A3EF /* HTInfoPassWordAddCell.xib */; };
 		CBCE4ED01EDF107A00E2CD38 /* NSFetchRequest+JKExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCE4CDF1EDF107900E2CD38 /* NSFetchRequest+JKExtensions.m */; };
 		CBCE4ED11EDF107A00E2CD38 /* NSManagedObject+JKDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCE4CE21EDF107900E2CD38 /* NSManagedObject+JKDictionary.m */; };
 		CBCE4ED21EDF107A00E2CD38 /* NSManagedObject+JKExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCE4CE41EDF107900E2CD38 /* NSManagedObject+JKExtensions.m */; };
@@ -833,6 +837,12 @@
 		CB898BDC1EBB804600989106 /* photoShutter2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = photoShutter2.caf; sourceTree = "<group>"; };
 		CBAAB0A41EB2600300B1C679 /* HYCollectViewAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYCollectViewAlignedLayout.h; sourceTree = "<group>"; };
 		CBAAB0A51EB2600300B1C679 /* HYCollectViewAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCollectViewAlignedLayout.m; sourceTree = "<group>"; };
+		CBC62DFF2015C1680050A3EF /* HTPassWordAddCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTPassWordAddCell.h; sourceTree = "<group>"; };
+		CBC62E002015C1680050A3EF /* HTPassWordAddCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTPassWordAddCell.m; sourceTree = "<group>"; };
+		CBC62E012015C1680050A3EF /* HTPassWordAddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTPassWordAddCell.xib; sourceTree = "<group>"; };
+		CBC62E042015E8180050A3EF /* HTInfoPassWordAddCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInfoPassWordAddCell.h; sourceTree = "<group>"; };
+		CBC62E052015E8180050A3EF /* HTInfoPassWordAddCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInfoPassWordAddCell.m; sourceTree = "<group>"; };
+		CBC62E062015E8180050A3EF /* HTInfoPassWordAddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTInfoPassWordAddCell.xib; sourceTree = "<group>"; };
 		CBCE4CDE1EDF107900E2CD38 /* NSFetchRequest+JKExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+JKExtensions.h"; sourceTree = "<group>"; };
 		CBCE4CDF1EDF107900E2CD38 /* NSFetchRequest+JKExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchRequest+JKExtensions.m"; sourceTree = "<group>"; };
 		CBCE4CE11EDF107900E2CD38 /* NSManagedObject+JKDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+JKDictionary.h"; sourceTree = "<group>"; };
@@ -3600,6 +3610,12 @@
 				FB2D5887201493270031D063 /* HTAcountAddCell.h */,
 				FB2D5888201493270031D063 /* HTAcountAddCell.m */,
 				FB2D5889201493270031D063 /* HTAcountAddCell.xib */,
+				CBC62DFF2015C1680050A3EF /* HTPassWordAddCell.h */,
+				CBC62E002015C1680050A3EF /* HTPassWordAddCell.m */,
+				CBC62E012015C1680050A3EF /* HTPassWordAddCell.xib */,
+				CBC62E042015E8180050A3EF /* HTInfoPassWordAddCell.h */,
+				CBC62E052015E8180050A3EF /* HTInfoPassWordAddCell.m */,
+				CBC62E062015E8180050A3EF /* HTInfoPassWordAddCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3678,6 +3694,7 @@
 			files = (
 				FB815E7F2014443F00327A43 /* HTAcountAddHeaderCell.xib in Resources */,
 				CB898BDD1EBB804600989106 /* photoShutter2.caf in Resources */,
+				CBC62E032015C1680050A3EF /* HTPassWordAddCell.xib in Resources */,
 				1C4EB2C61EA4A665009A1B3D /* Info.plist in Resources */,
 				CB4981F91EA660A8000E0792 /* ClassificationCell.xib in Resources */,
 				1C895EF61EB5E6D000ACBED0 /* LICENSE in Resources */,
@@ -3687,6 +3704,7 @@
 				1C8386DE1EB0816C006A8A71 /* HTEditItemsCell.xib in Resources */,
 				1C4EB2D81EA4AEB7009A1B3D /* HTAddItemsCell.xib in Resources */,
 				FB7E7C902011DDE800158EF9 /* Info.plist in Resources */,
+				CBC62E082015E8180050A3EF /* HTInfoPassWordAddCell.xib in Resources */,
 				FB7E7C872011DDE800158EF9 /* DKColorTable.txt in Resources */,
 				FB2D588B201493270031D063 /* HTAcountAddCell.xib in Resources */,
 				1C5EDEE71EC2EBAC00002A46 /* CYTabBar.bundle in Resources */,
@@ -3931,6 +3949,7 @@
 				1C5EDEFD1EC3179500002A46 /* JJOneScrollView.m in Sources */,
 				CBCE4F9D1EDF107B00E2CD38 /* UIWebView+JKLoad.m in Sources */,
 				1C1DB6621EF7805A000E6AEF /* UIImageView+HTReflect.m in Sources */,
+				CBC62E072015E8180050A3EF /* HTInfoPassWordAddCell.m in Sources */,
 				1C5EDF4F1EC4097F00002A46 /* YYTextAsyncLayer.m in Sources */,
 				CBCE4F341EDF107A00E2CD38 /* UIApplication+JKPermissions.m in Sources */,
 				1C5EDEEA1EC2EBAC00002A46 /* CYTabBarController.m in Sources */,
@@ -4090,6 +4109,7 @@
 				1C1DB6651EF7805A000E6AEF /* UIScrollView+HTAddition.m in Sources */,
 				CBCE4EFF1EDF107A00E2CD38 /* NSObject+JKAppInfo.m in Sources */,
 				1C1DB6591EF7805A000E6AEF /* HTTools+Label.m in Sources */,
+				CBC62E022015C1680050A3EF /* HTPassWordAddCell.m in Sources */,
 				CBCE4F591EDF107A00E2CD38 /* UIImage+JKFXImage.m in Sources */,
 				FB7E7C7B2011DDE800158EF9 /* UIBarButtonItem+Night.m in Sources */,
 				CBCE4F6D1EDF107A00E2CD38 /* UINavigationController+JKKeyboardFix.m in Sources */,

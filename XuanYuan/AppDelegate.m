@@ -68,10 +68,10 @@
 }
 
 //禁用三方键盘
-- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(NSString *)extensionPointIdentifier
-{
-    return YES;
-}
+//- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(NSString *)extensionPointIdentifier
+//{
+//    return NO;
+//}
 
 
 
