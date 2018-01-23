@@ -18,7 +18,7 @@
 
 -(void)configText:(NSString *)text
 {
-    self.inputAcountLabe.text = nil;
+    self.inputAcountLabel.text = nil;
     if (![HTTools ht_isBlankString:text]) {
         self.inputAcountLabel.text = text;
     }

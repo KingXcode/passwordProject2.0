@@ -11,19 +11,39 @@
 #import "HTAcountAddCell.h"
 #import "HTPassWordAddCell.h"
 #import "HTInfoPassWordAddCell.h"
+#import "HTAcountRemarksCell.h"
+#import "HTAcountAddRemarksVC.h"
 
 @interface HTAcountAddVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,weak) UITableView * tableView;
 @property (nonatomic,strong) HTMainAccountsModel * saveModel;
+
+@property (nonatomic,copy) NSString * a_id;
+@property (nonatomic,strong) HTMainAccountsKindItem * item;
+
+@property (nonatomic,assign) BOOL isEdit;
+
+
 @end
 
 @implementation HTAcountAddVC
 
-- (instancetype)init
+- (instancetype)initWithId:(NSString *)a_id
 {
     self = [super init];
     if (self) {
+        _a_id = a_id;
+        _isEdit = YES;
+    }
+    return self;
+}
 
+- (instancetype)initWithKindModel:(HTMainAccountsKindItem *)item
+{
+    self = [super init];
+    if (self) {
+        _item = item;
+        _isEdit = NO;
     }
     return self;
 }
@@ -34,34 +54,85 @@
     [self creatUI];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+//    RLMRealm *realm = [RLMRealm defaultRealm];
+//    [realm beginWriteTransaction];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+//    RLMRealm *realm = [RLMRealm defaultRealm];
+//    [realm cancelWriteTransaction];
+}
+
+-(void)dealloc
+{
+
+}
+
 -(void)loadData
 {
-    if ([HTTools ht_isBlankString:self.a_id]) {
-        [self defaultData];
-        return;
-    }
-    NSString *pred = [NSString stringWithFormat:@"a_id = %@",self.a_id];
-    RLMResults<HTMainAccountsModel *> *modelList = [HTMainAccountsModel objectsWhere:pred];
-    if (modelList.count<=0) {
-        [self defaultData];
+    if (self.isEdit == NO) {
+        self.title = @"新增";
+        double creatTime = [[NSDate date]timeIntervalSince1970];
+        _saveModel = [[HTMainAccountsModel alloc]initWithValue:@{@"k_id":self.item.k_id,
+                                                                 @"a_id":@(creatTime).stringValue,
+                                                                 @"creatTime":@(creatTime).stringValue}];
     }
     else
     {
-        _saveModel = modelList.firstObject;
+        self.title = @"编辑";
+        NSString *pred = [NSString stringWithFormat:@"a_id = '%@'",self.a_id];
+        RLMResults<HTMainAccountsModel *> *modelList = [HTMainAccountsModel objectsWhere:pred];
+        if (modelList.count<=0) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else
+        {
+            HTMainAccountsModel *model = modelList.firstObject;
+            _saveModel = [[HTMainAccountsModel alloc]init];
+            _saveModel.k_id = model.k_id;
+            _saveModel.a_id = model.a_id;
+            _saveModel.creatTime = model.creatTime;
+            _saveModel.changeTime = model.changeTime;
+            _saveModel.accountTitle = model.accountTitle;
+            _saveModel.account = model.account;
+            _saveModel.password = model.password;
+            _saveModel.remarks = model.remarks;
+            _saveModel.isCollect = model.isCollect;
+            _saveModel.iconType = model.iconType;
+            for (HTMainAccountsSubModel *item in model.infoPassWord) {
+                HTMainAccountsSubModel *i = [[HTMainAccountsSubModel alloc]initWithValue:@{@"subTitle":item.subTitle,@"password":item.password}];
+                [_saveModel.infoPassWord addObject:i];
+            }
+        }
     }
-}
-
--(void)defaultData
-{
-    double creatTime = [[NSDate date]timeIntervalSince1970];
-    _saveModel = [[HTMainAccountsModel alloc]initWithValue:@{@"k_id":@"niesiyang_0",
-                                                             @"a_id":@(creatTime).stringValue,
-                                                             @"creatTime":@(creatTime).stringValue}];
 }
 
 
 -(void)creatUI
 {
+    
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
+    rightBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    [rightBtn dk_setTitleColorPicker:DKColorPickerWithKey(NavigationBarSettingTintColor) forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
+    __weak typeof(self) __self = self;
+    [rightBtn addClickBlock:^(id obj) {
+        [__self checkData];
+    }];
+    
+    
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.delegate = self;
@@ -78,6 +149,7 @@
     [tableView registerNib:[UINib nibWithNibName:@"HTAcountAddCell" bundle:nil] forCellReuseIdentifier:@"HTAcountAddCell"];
     [tableView registerNib:[UINib nibWithNibName:@"HTPassWordAddCell" bundle:nil] forCellReuseIdentifier:@"HTPassWordAddCell"];
     [tableView registerNib:[UINib nibWithNibName:@"HTInfoPassWordAddCell" bundle:nil] forCellReuseIdentifier:@"HTInfoPassWordAddCell"];
+    [tableView registerNib:[UINib nibWithNibName:@"HTAcountRemarksCell" bundle:nil] forCellReuseIdentifier:@"HTAcountRemarksCell"];
     self.tableView = tableView;
     [self.view addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -85,6 +157,47 @@
         make.left.bottom.right.equalTo(self.view);
     }];
 }
+
+-(void)checkData
+{
+    if ([HTTools ht_isBlankString:self.saveModel.accountTitle]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"数据验证失败" message:@"请输入登录信息 名称" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    
+
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    if (self.isEdit == NO) {
+        RLMResults<HTMainAccountsKindModel *> *all = [HTMainAccountsKindModel objectsWhere:[NSString stringWithFormat:@"k_id = '%@'",self.item.k_id]];
+        if (all.count<=0) {
+            HTMainAccountsKindModel *model = [[HTMainAccountsKindModel alloc]init];
+            model.kindName = self.item.kindName;
+            model.kIconType = self.item.kIconType;
+            model.k_id = self.item.k_id;
+            [realm addObject:model];
+        }
+    }
+    
+    [realm addOrUpdateObject:self.saveModel];
+    [realm commitWriteTransaction];
+
+    if (self.isEdit == NO)
+    {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 
 #pragma -mark- tableView delegate  datasuoce
 
@@ -115,7 +228,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -127,6 +240,9 @@
     }
     if (section == 2) {
         return self.saveModel.infoPassWord.count;
+    }
+    if (section == 3) {
+        return 1;
     }
     return 0;
 }
@@ -170,13 +286,20 @@
     }
     
     if (indexPath.section == 2) {
-        __weak HTMainAccountsSubModel *info = [self.saveModel.infoPassWord objectAtIndex:indexPath.row];
+        HTMainAccountsSubModel *info = [self.saveModel.infoPassWord objectAtIndex:indexPath.row];
         HTInfoPassWordAddCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTInfoPassWordAddCell"];
         [cell configSubTitle:info.subTitle andPassword:info.password];
         [cell setTextChange:^(NSString *subTitle, NSString *password) {
-            info.subTitle = subTitle;
-            info.password = password;
+            HTMainAccountsSubModel *i = [__self.saveModel.infoPassWord objectAtIndex:indexPath.row];
+            i.subTitle = subTitle;
+            i.password = password;
         }];
+        return cell;
+    }
+    
+    if (indexPath.section == 3) {
+        HTAcountRemarksCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAcountRemarksCell"];
+        [cell configText:self.saveModel.remarks];
         return cell;
     }
     
@@ -185,7 +308,17 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    if (section == 3) {
+        return 10;
+    }
     return 0.1;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc]init];
+    view.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewEmptyColor);
+    return view;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -207,13 +340,20 @@
     }
     if (indexPath.section == 2) {
         return 68;
-    }    
+    }
+    if (indexPath.section == 3) {
+        CGFloat textHeight = [self.saveModel.remarks ht_heightOfFont:[UIFont systemFontOfSize:14] limitWidth:(IPHONE_WIDTH-24)];
+        if (textHeight<=21) {
+            textHeight = 21;
+        }
+        return 37+textHeight;
+    }
+    
     return 0;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    
     if (section == 0) {
         return 10;
     }
@@ -222,6 +362,9 @@
     }
     if (section == 2) {
         return 44;
+    }
+    if (section == 3) {
+        return 10;
     }
     return 0.1;
 }
@@ -247,13 +390,27 @@
 {
     HTMainAccountsSubModel *sub = [[HTMainAccountsSubModel alloc]init];
     [self.saveModel.infoPassWord addObject:sub];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView reloadData];
+//    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    __weak typeof(self) __self = self;
+    if (indexPath.section == 3) {
+        HTAcountAddRemarksVC *vc = [[HTAcountAddRemarksVC alloc]init];
+        vc.defaultText = self.saveModel.remarks;
+        [vc setClickedFinish:^(NSString *text) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                __self.saveModel.remarks = text;
+                [__self.tableView reloadData];
+            });
+        }];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
 }
 
 

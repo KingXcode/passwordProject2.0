@@ -42,6 +42,7 @@
 #import "NSDate+HTExtension.h"
 #import "NSObject+HTAOP.h"
 #import "NSArray+HTTools.h"
+#import "NSString+HTTools.h"
 
 /*
 #import "HTToolButton.h"

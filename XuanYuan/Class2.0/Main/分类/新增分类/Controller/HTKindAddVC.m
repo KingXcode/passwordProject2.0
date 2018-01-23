@@ -105,7 +105,7 @@
     HTMainAccountsKindItem *model = self.dataArray[indexPath.row];
     if ([model.k_id isEqualToString:@"niesiyang_0"])
     {//帐号信息
-        HTAcountAddVC *vc = [[HTAcountAddVC alloc]init];
+        HTAcountAddVC *vc = [[HTAcountAddVC alloc]initWithKindModel:model];
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([model.k_id isEqualToString:@"niesiyang_1"])

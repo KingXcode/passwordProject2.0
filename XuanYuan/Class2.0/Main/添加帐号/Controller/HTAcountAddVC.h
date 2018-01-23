@@ -10,7 +10,11 @@
 
 @interface HTAcountAddVC : XYBaseViewController
 
-//需要编辑的模型的kid
-@property (nonatomic,copy) NSString * a_id;
+
+//新增使用这个方法
+-(instancetype)initWithKindModel:(HTMainAccountsKindItem *)item;
+
+//编辑使用这个
+-(instancetype)initWithId:(NSString *)a_id;
 
 @end

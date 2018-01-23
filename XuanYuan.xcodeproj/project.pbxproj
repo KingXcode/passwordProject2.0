@@ -417,6 +417,11 @@
 		CBF589041EA3AA2900E7327B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF589021EA3AA2900E7327B /* LaunchScreen.storyboard */; };
 		FB2D588A201493270031D063 /* HTAcountAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D5888201493270031D063 /* HTAcountAddCell.m */; };
 		FB2D588B201493270031D063 /* HTAcountAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB2D5889201493270031D063 /* HTAcountAddCell.xib */; };
+		FB2D588F2016CAC30031D063 /* HTAcountRemarksCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D588D2016CAC30031D063 /* HTAcountRemarksCell.m */; };
+		FB2D58902016CAC30031D063 /* HTAcountRemarksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB2D588E2016CAC30031D063 /* HTAcountRemarksCell.xib */; };
+		FB2D58932016D0970031D063 /* NSString+HTTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D58922016D0970031D063 /* NSString+HTTools.m */; };
+		FB2D58972016D3A30031D063 /* HTAcountAddRemarksVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D58962016D3A30031D063 /* HTAcountAddRemarksVC.m */; };
+		FB2D589C2016FE5E0031D063 /* HTAcountListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D589B2016FE5E0031D063 /* HTAcountListVC.m */; };
 		FB7E7C722011DDE800158EF9 /* DKNightVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7C282011DDE700158EF9 /* DKNightVersionManager.m */; };
 		FB7E7C732011DDE800158EF9 /* NSObject+Night.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7C292011DDE700158EF9 /* NSObject+Night.m */; };
 		FB7E7C742011DDE800158EF9 /* DKAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7C2A2011DDE700158EF9 /* DKAlpha.m */; };
@@ -1285,6 +1290,15 @@
 		FB2D5887201493270031D063 /* HTAcountAddCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountAddCell.h; sourceTree = "<group>"; };
 		FB2D5888201493270031D063 /* HTAcountAddCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountAddCell.m; sourceTree = "<group>"; };
 		FB2D5889201493270031D063 /* HTAcountAddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTAcountAddCell.xib; sourceTree = "<group>"; };
+		FB2D588C2016CAC30031D063 /* HTAcountRemarksCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountRemarksCell.h; sourceTree = "<group>"; };
+		FB2D588D2016CAC30031D063 /* HTAcountRemarksCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountRemarksCell.m; sourceTree = "<group>"; };
+		FB2D588E2016CAC30031D063 /* HTAcountRemarksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTAcountRemarksCell.xib; sourceTree = "<group>"; };
+		FB2D58912016D0970031D063 /* NSString+HTTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTTools.h"; sourceTree = "<group>"; };
+		FB2D58922016D0970031D063 /* NSString+HTTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTTools.m"; sourceTree = "<group>"; };
+		FB2D58952016D3A30031D063 /* HTAcountAddRemarksVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountAddRemarksVC.h; sourceTree = "<group>"; };
+		FB2D58962016D3A30031D063 /* HTAcountAddRemarksVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountAddRemarksVC.m; sourceTree = "<group>"; };
+		FB2D589A2016FE5E0031D063 /* HTAcountListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountListVC.h; sourceTree = "<group>"; };
+		FB2D589B2016FE5E0031D063 /* HTAcountListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountListVC.m; sourceTree = "<group>"; };
 		FB7E7C282011DDE700158EF9 /* DKNightVersionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKNightVersionManager.m; sourceTree = "<group>"; };
 		FB7E7C292011DDE700158EF9 /* NSObject+Night.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Night.m"; sourceTree = "<group>"; };
 		FB7E7C2A2011DDE700158EF9 /* DKAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAlpha.m; sourceTree = "<group>"; };
@@ -1435,6 +1449,8 @@
 				1C1DB6131EF7805A000E6AEF /* NSDate+HTExtension.m */,
 				1C1DB6141EF7805A000E6AEF /* NSObject+HTAOP.h */,
 				1C1DB6151EF7805A000E6AEF /* NSObject+HTAOP.m */,
+				FB2D58912016D0970031D063 /* NSString+HTTools.h */,
+				FB2D58922016D0970031D063 /* NSString+HTTools.m */,
 			);
 			path = Foundatiion;
 			sourceTree = "<group>";
@@ -3320,6 +3336,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FB2D58942016D37E0031D063 /* 添加备注 */ = {
+			isa = PBXGroup;
+			children = (
+				FB2D58952016D3A30031D063 /* HTAcountAddRemarksVC.h */,
+				FB2D58962016D3A30031D063 /* HTAcountAddRemarksVC.m */,
+			);
+			path = "添加备注";
+			sourceTree = "<group>";
+		};
+		FB2D58982016FE150031D063 /* 按分类查看 */ = {
+			isa = PBXGroup;
+			children = (
+				FB2D589D2016FFCD0031D063 /* View */,
+				FB2D58992016FE270031D063 /* Controller */,
+			);
+			path = "按分类查看";
+			sourceTree = "<group>";
+		};
+		FB2D58992016FE270031D063 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB2D589A2016FE5E0031D063 /* HTAcountListVC.h */,
+				FB2D589B2016FE5E0031D063 /* HTAcountListVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB2D589D2016FFCD0031D063 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FB7E7C242011DDE700158EF9 /* Class2.0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3504,6 +3554,7 @@
 		FB7E7C9F2011F48700158EF9 /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
+				FB2D58982016FE150031D063 /* 按分类查看 */,
 				FB7E7CAC2013110B00158EF9 /* 新增分类 */,
 				FB7E7CA82013101200158EF9 /* Controller */,
 			);
@@ -3549,6 +3600,7 @@
 			children = (
 				FB815E7820143ABE00327A43 /* HTAcountAddVC.h */,
 				FB815E7920143ABE00327A43 /* HTAcountAddVC.m */,
+				FB2D58942016D37E0031D063 /* 添加备注 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3616,6 +3668,9 @@
 				CBC62E042015E8180050A3EF /* HTInfoPassWordAddCell.h */,
 				CBC62E052015E8180050A3EF /* HTInfoPassWordAddCell.m */,
 				CBC62E062015E8180050A3EF /* HTInfoPassWordAddCell.xib */,
+				FB2D588C2016CAC30031D063 /* HTAcountRemarksCell.h */,
+				FB2D588D2016CAC30031D063 /* HTAcountRemarksCell.m */,
+				FB2D588E2016CAC30031D063 /* HTAcountRemarksCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3701,6 +3756,7 @@
 				FB815E742014250000327A43 /* kindList.plist in Resources */,
 				1C5EDF001EC3179500002A46 /* none.png in Resources */,
 				CBF589041EA3AA2900E7327B /* LaunchScreen.storyboard in Resources */,
+				FB2D58902016CAC30031D063 /* HTAcountRemarksCell.xib in Resources */,
 				1C8386DE1EB0816C006A8A71 /* HTEditItemsCell.xib in Resources */,
 				1C4EB2D81EA4AEB7009A1B3D /* HTAddItemsCell.xib in Resources */,
 				FB7E7C902011DDE800158EF9 /* Info.plist in Resources */,
@@ -3782,6 +3838,7 @@
 				1C8386F61EB0A5E7006A8A71 /* SCLAlertViewStyleKit.m in Sources */,
 				CBCE4F7F1EDF107A00E2CD38 /* UITextField+JKHistory.m in Sources */,
 				CBCE4F1E1EDF107A00E2CD38 /* NSTimer+JKAddition.m in Sources */,
+				FB2D58972016D3A30031D063 /* HTAcountAddRemarksVC.m in Sources */,
 				CBCE4ED21EDF107A00E2CD38 /* NSManagedObject+JKExtensions.m in Sources */,
 				CBCE4F981EDF107B00E2CD38 /* UIViewController+JKStoreKit.m in Sources */,
 				CBCE4F841EDF107A00E2CD38 /* UITextView+JKPinchZoom.m in Sources */,
@@ -3956,6 +4013,7 @@
 				CBCE4F1F1EDF107A00E2CD38 /* NSTimer+JKBlocks.m in Sources */,
 				CBCE4EDD1EDF107A00E2CD38 /* NSData+JKDataCache.m in Sources */,
 				CBCE4EF51EDF107A00E2CD38 /* NSIndexPath+JKOffset.m in Sources */,
+				FB2D588F2016CAC30031D063 /* HTAcountRemarksCell.m in Sources */,
 				FB7E7C7F2011DDE800158EF9 /* UIToolbar+Night.m in Sources */,
 				CBCE4F511EDF107A00E2CD38 /* UIFont+JKTTF.m in Sources */,
 				1C8386E11EB08184006A8A71 /* HTEditItemsModel.m in Sources */,
@@ -4049,6 +4107,7 @@
 				1C5EDF481EC4097E00002A46 /* YYTextParser.m in Sources */,
 				CBCE4F831EDF107A00E2CD38 /* UITextView+JKInputLimit.m in Sources */,
 				CBCE4F101EDF107A00E2CD38 /* NSString+JKHash.m in Sources */,
+				FB2D58932016D0970031D063 /* NSString+HTTools.m in Sources */,
 				1C5EDEE91EC2EBAC00002A46 /* CYTabBarConfig.m in Sources */,
 				1C14FB111EAF606F0064DBEA /* Setting_interface_ViewController.m in Sources */,
 				1C5EDEF01EC2F91900002A46 /* ZYSpreadButton.m in Sources */,
@@ -4134,6 +4193,7 @@
 				CBCE4F851EDF107A00E2CD38 /* UITextView+JKPlaceHolder.m in Sources */,
 				CBCE4F5F1EDF107A00E2CD38 /* UIImage+JKRoundedCorner.m in Sources */,
 				CBCE4F891EDF107A00E2CD38 /* UIView+JKConstraints.m in Sources */,
+				FB2D589C2016FE5E0031D063 /* HTAcountListVC.m in Sources */,
 				CBF588F61EA3AA2900E7327B /* main.m in Sources */,
 				FB7E7C802011DDE800158EF9 /* UISwitch+Night.m in Sources */,
 				1C8386601EB04F01006A8A71 /* UITableView+Extension.m in Sources */,

@@ -13,6 +13,11 @@
 + (NSArray *)requiredProperties {
     return @[@"subTitle"];
 }
+//设置属性默认值
++ (NSDictionary *)defaultPropertyValues{
+    return @{@"subTitle":@"密码"
+             };
+}
 + (NSDictionary *)linkingObjectsProperties {
     return @{
              @"owners": [RLMPropertyDescriptor descriptorWithClass:HTMainAccountsModel.class propertyName:@"infoPassWord"],
@@ -22,7 +27,10 @@
 
 @implementation HTMainAccountsModel
 + (NSArray *)requiredProperties {
-    return @[@"accountTitle",@"k_id"];
+    return @[@"accountTitle",@"k_id",@"a_id"];
+}
++ (NSString *)primaryKey {
+    return @"a_id";
 }
 //设置属性默认值
 + (NSDictionary *)defaultPropertyValues{
