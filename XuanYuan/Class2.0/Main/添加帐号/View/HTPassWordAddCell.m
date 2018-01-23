@@ -27,6 +27,7 @@
     [[HTTools getCurrentVC] presentViewController:alert animated:YES completion:nil];
 }
 - (IBAction)clickedRight:(UIButton *)sender {
+    [self configState:![self isShowPassWord]];
 }
 
 -(void)configText:(NSString *)text
@@ -68,15 +69,44 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    textField.secureTextEntry = NO;
+    if (textField == self.inputPasswordTextField) {
+        if (textField.isFirstResponder) {
+            [self configState:NO];
+        }
+    }
     return YES;
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-    textField.secureTextEntry = YES;
+    if (textField == self.inputPasswordTextField) {
+        if (textField.isFirstResponder) {
+            [self configState:YES];
+        }
+    }
     return YES;
 }
+
+-(BOOL)isShowPassWord
+{
+    return self.inputPasswordTextField.isSecureTextEntry;
+}
+
+-(void)configState:(BOOL)state
+{
+    if (state)
+    {
+        self.inputPasswordTextField.secureTextEntry = YES;
+        [self.rightBtn setTitle:@"显示密码" forState:UIControlStateNormal];
+    }
+    else
+    {
+        self.inputPasswordTextField.secureTextEntry = NO;
+        [self.rightBtn setTitle:@"隐藏密码" forState:UIControlStateNormal];
+    }
+}
+
+
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

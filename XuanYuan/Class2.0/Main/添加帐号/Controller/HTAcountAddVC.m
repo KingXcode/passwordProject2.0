@@ -338,7 +338,7 @@
         return 68;
     }
     if (indexPath.section == 3) {
-        CGFloat textHeight = [self.saveModel.remarks ht_heightOfFont:[UIFont systemFontOfSize:14] limitWidth:(IPHONE_WIDTH-24)];
+        CGFloat textHeight = [self.saveModel.remarks ht_heightOfFont:[UIFont systemFontOfSize:14] limitWidth:(IPHONE_WIDTH-58)];
         if (textHeight<=21) {
             textHeight = 21;
         }

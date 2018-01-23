@@ -55,6 +55,7 @@
     __weak typeof(self) __self = self;
     [rightBtn addClickBlock:^(id obj) {
         HTKindAddVC *vc = [[HTKindAddVC alloc]init];
+        [vc setHidesBottomBarWhenPushed:YES];
         [__self.navigationController pushViewController:vc animated:YES];
     }];
     
@@ -126,6 +127,7 @@
     HTMainAccountsKindModel *model = [modelList objectAtIndex:indexPath.row];
     HTAcountListVC *vc = [[HTAcountListVC alloc]init];
     vc.k_id = model.k_id;
+    [vc setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -17,8 +17,6 @@
 
 #define XuanYuanAeskey @"cn.niesiyang.aeskey"
 //偏好设置
-//主题颜色色值 为nil时 显示蓝色
-#define kMainColorUserDefaults @"kMainColorUserDefaults"
 
 //主题类型
 #define DKNormal [DKNightVersionManager sharedManager].themeVersion = DKThemeVersionNormal;
@@ -37,28 +35,14 @@
 //入侵记录InvadeRecord
 #define kAllowInvadeRecordUserDefaults @"kAllowInvadeRecordUserDefaults"
 
-//通知
-//刷新首页通知
-#define kReloadClassification_Noti @"reloadClassification"
-//刷新收藏通知
-#define kReloadCollect_Noti @"reloadClassification"
 
 
-#define MainConfigManager [HTConfigManager sharedconfigManager]
-#define MainColorManager  [HTColorManager sharedcolorManager]
 
-//主基调
-#define MainRGB [MainColorManager mainRGB]
-#define MainTextColor [MainColorManager mainTextColor]
-#define MainTextWhiteColor [MainColorManager mainTextWhiteColor]
-
-#define MainCollectColor [MainColorManager mainCollectColor]//收藏的颜色
-#define MainTableViewBackgroundColor  [MainColorManager mainTableViewBackgroundColor]
 
 //主控制器
 #define MainKeyWindow [UIApplication sharedApplication].keyWindow
 #define MainRootViewController [UIApplication sharedApplication].keyWindow.rootViewController
-#define MainRootTabbarController (HTTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController
+#define MainRootTabbarController (XYTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController
 
 #define MainAppDelegate  (AppDelegate *)[UIApplication sharedApplication].delegate
 
@@ -133,7 +117,7 @@ NSString * const ht_strName = ht_String;
 
 //判断系统版本
 //ios 11.0+
-#define ht_IOS11_OR_LATER        ( [[UIDevice currentDevice] systemVersion].integerValue>=11)
+#define ht_IOS11_OR_LATER       ( [[UIDevice currentDevice] systemVersion].integerValue>=11)
 //ios 10.0+
 #define ht_IOS10_OR_LATER		( [[UIDevice currentDevice] systemVersion].integerValue>=10)
 //ios 9.0+

@@ -16,8 +16,6 @@
 #import <Masonry.h>
 #import <MJRefresh.h>
 #import <MJExtension.h>
-#import <UINavigationController+SwipeBack.h>//解决侧滑失效
-#import <YTKKeyValueStore.h>//数据库
 
 #import "AppDelegate.h"
 #import "XuanYuan-Swift.h"
@@ -54,7 +52,7 @@
 
 
 #if DEBUG
-#define NSLog(FORMAT, ...) fprintf(stderr,"\nfunction:%s line:%d content:%s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define NSLog(FORMAT, ...) fprintf(stderr,"\nfunction:%s line:%d content:\n%s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 #else
 #define NSLog(FORMAT, ...) nil
 #endif

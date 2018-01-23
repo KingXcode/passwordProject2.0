@@ -84,6 +84,8 @@
 		CBC62E032015C1680050A3EF /* HTPassWordAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC62E012015C1680050A3EF /* HTPassWordAddCell.xib */; };
 		CBC62E072015E8180050A3EF /* HTInfoPassWordAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC62E052015E8180050A3EF /* HTInfoPassWordAddCell.m */; };
 		CBC62E082015E8180050A3EF /* HTInfoPassWordAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC62E062015E8180050A3EF /* HTInfoPassWordAddCell.xib */; };
+		CBC62E1220177D420050A3EF /* HTAcountListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC62E1020177D420050A3EF /* HTAcountListCell.m */; };
+		CBC62E1320177D420050A3EF /* HTAcountListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC62E1120177D420050A3EF /* HTAcountListCell.xib */; };
 		CBF588F61EA3AA2900E7327B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF588F51EA3AA2900E7327B /* main.m */; };
 		CBF588F91EA3AA2900E7327B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF588F81EA3AA2900E7327B /* AppDelegate.m */; };
 		CBF588FF1EA3AA2900E7327B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF588FD1EA3AA2900E7327B /* Main.storyboard */; };
@@ -296,6 +298,9 @@
 		CBC62E042015E8180050A3EF /* HTInfoPassWordAddCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInfoPassWordAddCell.h; sourceTree = "<group>"; };
 		CBC62E052015E8180050A3EF /* HTInfoPassWordAddCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInfoPassWordAddCell.m; sourceTree = "<group>"; };
 		CBC62E062015E8180050A3EF /* HTInfoPassWordAddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTInfoPassWordAddCell.xib; sourceTree = "<group>"; };
+		CBC62E0F20177D420050A3EF /* HTAcountListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAcountListCell.h; sourceTree = "<group>"; };
+		CBC62E1020177D420050A3EF /* HTAcountListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAcountListCell.m; sourceTree = "<group>"; };
+		CBC62E1120177D420050A3EF /* HTAcountListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTAcountListCell.xib; sourceTree = "<group>"; };
 		CBF588F11EA3AA2900E7327B /* XuanYuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XuanYuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF588F51EA3AA2900E7327B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CBF588F71EA3AA2900E7327B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -706,6 +711,16 @@
 			path = Gloabal;
 			sourceTree = "<group>";
 		};
+		CBC62E0E20177D420050A3EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBC62E0F20177D420050A3EF /* HTAcountListCell.h */,
+				CBC62E1020177D420050A3EF /* HTAcountListCell.m */,
+				CBC62E1120177D420050A3EF /* HTAcountListCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CBF588E81EA3AA2800E7327B = {
 			isa = PBXGroup;
 			children = (
@@ -764,7 +779,7 @@
 		FB2D58982016FE150031D063 /* 按分类查看 */ = {
 			isa = PBXGroup;
 			children = (
-				FB2D589D2016FFCD0031D063 /* View */,
+				CBC62E0E20177D420050A3EF /* View */,
 				FB2D58992016FE270031D063 /* Controller */,
 			);
 			path = "按分类查看";
@@ -777,13 +792,6 @@
 				FB2D589B2016FE5E0031D063 /* HTAcountListVC.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		FB2D589D2016FFCD0031D063 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		FB7E7C242011DDE700158EF9 /* Class2.0 */ = {
@@ -1170,6 +1178,7 @@
 				1C895EF61EB5E6D000ACBED0 /* LICENSE in Resources */,
 				FB815E742014250000327A43 /* kindList.plist in Resources */,
 				CBF589041EA3AA2900E7327B /* LaunchScreen.storyboard in Resources */,
+				CBC62E1320177D420050A3EF /* HTAcountListCell.xib in Resources */,
 				FB2D58902016CAC30031D063 /* HTAcountRemarksCell.xib in Resources */,
 				FB7E7C902011DDE800158EF9 /* Info.plist in Resources */,
 				CBC62E082015E8180050A3EF /* HTInfoPassWordAddCell.xib in Resources */,
@@ -1190,9 +1199,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XuanYuan/Pods-XuanYuan-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1220,13 +1234,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XuanYuan-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1307,6 +1324,7 @@
 				1C1DB6691EF7805A000E6AEF /* UITextView+HTInputLimit.m in Sources */,
 				1C1DB66A1EF7805A000E6AEF /* UIView+HTExtension.m in Sources */,
 				FB7E7C892011DDE800158EF9 /* UITextView+Keyboard.m in Sources */,
+				CBC62E1220177D420050A3EF /* HTAcountListCell.m in Sources */,
 				1C5EDF481EC4097E00002A46 /* YYTextParser.m in Sources */,
 				FB2D58932016D0970031D063 /* NSString+HTTools.m in Sources */,
 				1C5EDF421EC4097E00002A46 /* YYTextLayout.m in Sources */,

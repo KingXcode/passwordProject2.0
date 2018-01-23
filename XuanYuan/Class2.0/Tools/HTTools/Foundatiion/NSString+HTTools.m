@@ -271,10 +271,6 @@
 /**
  *  计算富文本字体高度
  *
- *  @param lineSpeace 行高
- *  @param font       字体
- *  @param width      字体所占宽度
- *
  *  @return 富文本高度
  */
 -(CGFloat)ht_attr_getSpaceLabelHeightwithSpace:(CGFloat)lineSpace

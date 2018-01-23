@@ -8,7 +8,7 @@
 
 #import "HTAcountAddCell.h"
 
-@interface HTAcountAddCell()
+@interface HTAcountAddCell()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *inputAcountLabel;
 
@@ -27,7 +27,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-
+    self.inputAcountLabel.delegate = self;
     [self ht_bottomLineShow];
     [self ht_bottomLineLeftAndRightMargins:HTMarginsMake(16, 0)];
     self.titleLabel.dk_textColorPicker = DKColorPickerWithKey(textColor_1);

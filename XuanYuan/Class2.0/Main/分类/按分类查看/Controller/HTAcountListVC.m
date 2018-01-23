@@ -8,6 +8,7 @@
 
 #import "HTAcountListVC.h"
 #import "HTAcountAddVC.h"
+#import "HTAcountListCell.h"
 
 @interface HTAcountListVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,weak) UITableView * tableView;
@@ -65,6 +66,7 @@
     tableView.dataSource = self;
     tableView.bounces = NO;
     tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    [tableView registerNib:[UINib nibWithNibName:@"HTAcountListCell" bundle:nil] forCellReuseIdentifier:@"HTAcountListCell"];
     tableView.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewBackgroundColor);
     tableView.estimatedRowHeight = 0;
     tableView.estimatedSectionHeaderHeight = 0;
@@ -90,20 +92,18 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
-    }
+    HTAcountListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAcountListCell"];
     RLMResults<HTMainAccountsModel *> *all = [HTMainAccountsModel objectsWhere:[NSString stringWithFormat:@"k_id = '%@'",self.k_id]];
     HTMainAccountsModel *model = [all objectAtIndex:indexPath.row];
-    cell.textLabel.text = model.accountTitle;
-    cell.detailTextLabel.text = model.account;
+    cell.iconImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"type_%@",@(model.iconType)]];
+    cell.acountTitleLabel.text = model.accountTitle;
+    cell.acountLabel.text = model.account;
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    return 60;
 }
 
 

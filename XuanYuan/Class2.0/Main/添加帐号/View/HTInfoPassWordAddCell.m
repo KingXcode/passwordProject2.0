@@ -8,7 +8,7 @@
 
 #import "HTInfoPassWordAddCell.h"
 
-@interface HTInfoPassWordAddCell()
+@interface HTInfoPassWordAddCell()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *topBgVIew;
 @property (weak, nonatomic) IBOutlet UIView *bottomBgView;
 
@@ -46,6 +46,8 @@
     self.passwordLabel.dk_textColorPicker = DKColorPickerWithKey(textColor_1);
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.inputTitleTextField.delegate = self;
+    self.inputPasswordTextField.delegate = self;
     
     __weak typeof(self) __self = self;
     [self.inputTitleTextField ht_editingChanged:^{

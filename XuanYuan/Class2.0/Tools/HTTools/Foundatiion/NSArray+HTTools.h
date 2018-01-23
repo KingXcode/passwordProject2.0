@@ -38,9 +38,7 @@
 
 /**
  去除重复的元素
- 
- @param object 需要去除重复元素的数组
- @return 已经去除重复元素的新数组
+  @return 已经去除重复元素的新数组
  */
 -(NSArray *)ht_removeRepeatRows;
 
@@ -52,8 +50,6 @@
  根据modelArray中的属性 去除重复的元素
  目前我的测试中 NSString 和 int类型是没有问题的,过滤正常.
  感慨一下,系统的数组提供的过滤器,排序方式真的很强大
- 
- @param object 模型数组
  @param keypath 模型数组元素中的一个属性
  @return 过滤之后的新数组
  */

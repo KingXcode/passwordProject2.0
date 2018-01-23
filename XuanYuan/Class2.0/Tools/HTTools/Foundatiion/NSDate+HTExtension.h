@@ -54,7 +54,7 @@
 /**
  * 返回当前月一共有几周(可能为4,5,6)
  */
-- (NSUInteger)ht_weeht_weekOfYearksOfMonth;
+- (NSUInteger)ht_weeksOfMonth;
 + (NSUInteger)ht_weeksOfMonth:(NSDate *)date;
 
 /**

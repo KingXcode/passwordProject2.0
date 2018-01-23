@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dfV-Et-Isk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dfV-Et-Isk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DKp-dB-XBy"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="设置" id="OQQ-Hm-jjZ"/>
+                    <tabBarItem key="tabBarItem" title="设置" selectedImage="settings-设置" id="OQQ-Hm-jjZ"/>
                     <navigationItem key="navigationItem" title="设置" id="wFp-vf-Hbh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RdO-HL-Cns" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,7 +50,7 @@
         <scene sceneID="SrB-IX-AZG">
             <objects>
                 <navigationController id="JuL-G0-4j3" customClass="XYNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="分类" id="vdm-uu-l4d"/>
+                    <tabBarItem key="tabBarItem" title="分类" image="home-首页" selectedImage="home-首页" id="vdm-uu-l4d"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aN7-T0-4ol">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -80,7 +80,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VE4-g5-dU7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="分类" id="VZP-nY-k4X"/>
+                    <tabBarItem key="tabBarItem" title="分类" image="home-首页" selectedImage="home-首页" id="VZP-nY-k4X"/>
                     <navigationItem key="navigationItem" title="分类" id="fBE-qV-fqy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8g-Nb-Daf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -91,7 +91,7 @@
         <scene sceneID="7Ft-cv-Ayb">
             <objects>
                 <navigationController id="wLk-Lp-2qf" customClass="XYNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="设置" id="THf-pU-1Zk"/>
+                    <tabBarItem key="tabBarItem" title="设置" image="settings-设置" selectedImage="settings-设置" id="THf-pU-1Zk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8qi-Jp-fG6">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -108,4 +108,8 @@
             <point key="canvasLocation" x="-146" y="290"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home-首页" width="22" height="22"/>
+        <image name="settings-设置" width="22" height="22"/>
+    </resources>
 </document>
