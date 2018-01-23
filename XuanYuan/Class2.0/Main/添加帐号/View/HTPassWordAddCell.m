@@ -70,9 +70,7 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     if (textField == self.inputPasswordTextField) {
-        if (textField.isFirstResponder) {
-            [self configState:NO];
-        }
+        [self configState:NO];
     }
     return YES;
 }

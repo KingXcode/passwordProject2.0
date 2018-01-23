@@ -107,7 +107,11 @@
             _saveModel.isCollect = model.isCollect;
             _saveModel.iconType = model.iconType;
             for (HTMainAccountsSubModel *item in model.infoPassWord) {
-                HTMainAccountsSubModel *i = [[HTMainAccountsSubModel alloc]initWithValue:@{@"subTitle":item.subTitle,@"password":item.password}];
+                
+                HTMainAccountsSubModel *i = [[HTMainAccountsSubModel alloc]init];
+                i.subTitle = item.subTitle;
+                i.password = item.password;
+                
                 [_saveModel.infoPassWord addObject:i];
             }
         }
