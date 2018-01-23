@@ -57,8 +57,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    RLMRealm *realm = [RLMRealm defaultRealm];
-//    [realm beginWriteTransaction];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -70,8 +68,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-//    RLMRealm *realm = [RLMRealm defaultRealm];
-//    [realm cancelWriteTransaction];
 }
 
 -(void)dealloc

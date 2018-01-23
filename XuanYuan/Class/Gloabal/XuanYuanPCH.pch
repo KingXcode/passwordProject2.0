@@ -22,32 +22,12 @@
 #import "AppDelegate.h"
 #import "XuanYuan-Swift.h"
 
-#import "UITableView+Extension.h"   //tableView 刷新动画
-#import "DGActivityIndicatorView.h"
-#import "SCLAlertView.h"
-#import "UIButton+EnlargeEdge.h"//点击范围放大
 #import "UIView+AddClick.h"     //添加UIView点击事件
-#import "UINavigationController+JWPageJumpTool.h"  //UINavigationController 跳转功能
-#import "UIView+ZTQuickControl.h"                  //快速添加按钮
-#import "PopoverView.h"         //弹框
 #import "ALActionSheetView.h"   //仿微信弹出框
-#import "CYLTableViewPlaceHolder.h"     //空tableView展示
 #import "ShareActionView.h"
-#import "JJPhotoManeger.h"
 #import "YYText.h"
 #import "UIView+Toast.h"
 
-
-#import "CYTabBarController.h"
-#import "ZYSpreadButton.h"
-
-
-#import "HTDIYRefreshHeader.h"
-#import "HTBaseViewController.h"
-#import "HTTabBarController.h"
-#import "HTConfigManager.h"
-#import "HTColorManager.h"
-#import "HTPlaceHolderView.h"
 
 
 
@@ -66,19 +46,19 @@
 
 //-------------------打印日志-------------------------
 //DEBUG  模式下打印日志,当前行
-#ifdef DEBUG
-#   define HTLog(fmt, ...) NSLog((@"\n%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
-#else
-#   define HTLog(...)
-#endif
+//#ifdef DEBUG
+//#   define HTLog(fmt, ...) NSLog((@"\n%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+//#else
+//#   define HTLog(...)
+//#endif
 
-/*
+
 #if DEBUG
 #define NSLog(FORMAT, ...) fprintf(stderr,"\nfunction:%s line:%d content:%s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 #else
 #define NSLog(FORMAT, ...) nil
 #endif
-*/
+
 #ifdef DEBUG
 #define ULog(fmt, ...)  \
 {\

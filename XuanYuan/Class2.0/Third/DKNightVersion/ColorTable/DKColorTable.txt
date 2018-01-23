@@ -5,7 +5,6 @@ NORMAL   NIGHT    CUSTOM_0
 #ffffff  #ffffff  #ffffff   NavigationBarSettingTintColor
 #ffffff  #ffffff  #ffffff   TableViewBackgroundColor
 #f3f3f5  #f3f3f5  #f3f3f5   TableViewEmptyColor
-
 #333333  #333333  #333333   textColor_0
 #666666  #666666  #666666   textColor_1
 #999999  #999999  #999999   textColor_2
