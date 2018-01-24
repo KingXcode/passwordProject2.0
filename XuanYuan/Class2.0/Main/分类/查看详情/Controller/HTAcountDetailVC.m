@@ -10,6 +10,7 @@
 #import "HTAcountDetailHeaderCell.h"
 #import "HTAcountAddVC.h"
 #import "HTAcountDetailCell.h"
+#import "HTAcountDetailSubPasswordCell.h"
 #import "HTAcountRemarksCell.h"
 
 @interface HTAcountDetailVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -67,6 +68,7 @@
     tableView.estimatedSectionFooterHeight = 0;
     [tableView registerNib:[UINib nibWithNibName:@"HTAcountDetailHeaderCell" bundle:nil] forCellReuseIdentifier:@"HTAcountDetailHeaderCell"];
     [tableView registerNib:[UINib nibWithNibName:@"HTAcountDetailCell" bundle:nil] forCellReuseIdentifier:@"HTAcountDetailCell"];
+    [tableView registerNib:[UINib nibWithNibName:@"HTAcountDetailSubPasswordCell" bundle:nil] forCellReuseIdentifier:@"HTAcountDetailSubPasswordCell"];
     [tableView registerNib:[UINib nibWithNibName:@"HTAcountRemarksCell" bundle:nil] forCellReuseIdentifier:@"HTAcountRemarksCell"];
     self.tableView = tableView;
     [self.view addSubview:tableView];
@@ -126,6 +128,14 @@
         return cell;
     }
     
+    if (indexPath.section == 2) {
+        HTMainAccountsSubModel *info = model.infoPassWord[indexPath.row];
+        HTAcountDetailSubPasswordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAcountDetailSubPasswordCell"];
+        cell.topLabel.text = info.subTitle;
+        cell.bottomLabel.text = info.password;
+        return cell;
+    }
+    
     
     if (indexPath.section == 3) {
         HTAcountRemarksCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTAcountRemarksCell"];
@@ -163,7 +173,7 @@
         }
     }
     if (indexPath.section == 2) {
-        return 68;
+        return 55;
     }
     if (indexPath.section == 3) {
         CGFloat textHeight = [model.remarks ht_heightOfFont:[UIFont systemFontOfSize:14] limitWidth:(IPHONE_WIDTH-24)];
@@ -180,6 +190,11 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void)copy:(UIMenuController *)menu
+{
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -218,6 +233,11 @@
     return view;
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    UIMenuController * menu = [UIMenuController sharedMenuController];
+    [menu setMenuVisible:NO animated:YES];
+}
 
 
 

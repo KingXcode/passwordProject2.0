@@ -19,6 +19,8 @@
     self.acountKindLabel.dk_textColorPicker = DKColorPickerWithKey(textColor_2);
 }
 
+
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

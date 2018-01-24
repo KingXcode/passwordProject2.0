@@ -13,6 +13,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.topLabel.dk_textColorPicker = DKColorPickerWithKey(textColor_1);
+    self.bottomLabel.dk_textColorPicker = DKColorPickerWithKey(textColor_0);
+    [self ht_bottomLineShow];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

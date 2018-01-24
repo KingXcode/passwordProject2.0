@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HTAcountDetailSubPasswordCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *topLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bottomLabel;
 
 @end
