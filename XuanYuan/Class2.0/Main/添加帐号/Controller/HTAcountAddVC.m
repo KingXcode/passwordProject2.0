@@ -54,21 +54,23 @@
     [self creatUI];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
 }
-
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    // 开启返回手势
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    }
 }
+
 
 -(void)dealloc
 {
@@ -121,16 +123,26 @@
 
 -(void)creatUI
 {
-    
+    __weak typeof(self) __self = self;
+
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
     rightBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [rightBtn dk_setTitleColorPicker:DKColorPickerWithKey(NavigationBarSettingTintColor) forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
-    __weak typeof(self) __self = self;
     [rightBtn addClickBlock:^(id obj) {
         [__self checkData];
     }];
+    
+    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftBtn setTitle:@"返回" forState:UIControlStateNormal];
+    leftBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    [leftBtn dk_setTitleColorPicker:DKColorPickerWithKey(NavigationBarSettingTintColor) forState:UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+    [leftBtn addClickBlock:^(id obj) {
+        [__self.navigationController popViewControllerAnimated:NO];
+    }];
+    
     
     
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
@@ -184,7 +196,6 @@
             [realm addObject:model];
         }
     }
-    
     [realm addOrUpdateObject:self.saveModel];
     [realm commitWriteTransaction];
 
@@ -391,7 +402,6 @@
     HTMainAccountsSubModel *sub = [[HTMainAccountsSubModel alloc]init];
     [self.saveModel.infoPassWord addObject:sub];
     [self.tableView reloadData];
-//    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 

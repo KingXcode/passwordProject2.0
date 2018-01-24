@@ -98,6 +98,13 @@
 		FB2D58932016D0970031D063 /* NSString+HTTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D58922016D0970031D063 /* NSString+HTTools.m */; };
 		FB2D58972016D3A30031D063 /* HTAcountAddRemarksVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D58962016D3A30031D063 /* HTAcountAddRemarksVC.m */; };
 		FB2D589C2016FE5E0031D063 /* HTAcountListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D589B2016FE5E0031D063 /* HTAcountListVC.m */; };
+		FB2D58A2201861AD0031D063 /* HTAcountDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D58A1201861AD0031D063 /* HTAcountDetailVC.m */; };
+		FB2D58A7201866BC0031D063 /* HTAcountDetailHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D58A5201866BC0031D063 /* HTAcountDetailHeaderCell.m */; };
+		FB2D58A8201866BC0031D063 /* HTAcountDetailHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB2D58A6201866BC0031D063 /* HTAcountDetailHeaderCell.xib */; };
+		FB2D58AC20187A190031D063 /* HTAcountDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D58AA20187A190031D063 /* HTAcountDetailCell.m */; };
+		FB2D58AD20187A190031D063 /* HTAcountDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB2D58AB20187A190031D063 /* HTAcountDetailCell.xib */; };
+		FB2D58B1201884570031D063 /* HTAcountDetailSubPasswordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D58AF201884570031D063 /* HTAcountDetailSubPasswordCell.m */; };
+		FB2D58B2201884570031D063 /* HTAcountDetailSubPasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB2D58B0201884570031D063 /* HTAcountDetailSubPasswordCell.xib */; };
 		FB7E7C722011DDE800158EF9 /* DKNightVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7C282011DDE700158EF9 /* DKNightVersionManager.m */; };
 		FB7E7C732011DDE800158EF9 /* NSObject+Night.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7C292011DDE700158EF9 /* NSObject+Night.m */; };
 		FB7E7C742011DDE800158EF9 /* DKAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7E7C2A2011DDE700158EF9 /* DKAlpha.m */; };
@@ -321,6 +328,17 @@
 		FB2D58962016D3A30031D063 /* HTAcountAddRemarksVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountAddRemarksVC.m; sourceTree = "<group>"; };
 		FB2D589A2016FE5E0031D063 /* HTAcountListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountListVC.h; sourceTree = "<group>"; };
 		FB2D589B2016FE5E0031D063 /* HTAcountListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountListVC.m; sourceTree = "<group>"; };
+		FB2D58A0201861AD0031D063 /* HTAcountDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountDetailVC.h; sourceTree = "<group>"; };
+		FB2D58A1201861AD0031D063 /* HTAcountDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountDetailVC.m; sourceTree = "<group>"; };
+		FB2D58A4201866BC0031D063 /* HTAcountDetailHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountDetailHeaderCell.h; sourceTree = "<group>"; };
+		FB2D58A5201866BC0031D063 /* HTAcountDetailHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountDetailHeaderCell.m; sourceTree = "<group>"; };
+		FB2D58A6201866BC0031D063 /* HTAcountDetailHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTAcountDetailHeaderCell.xib; sourceTree = "<group>"; };
+		FB2D58A920187A190031D063 /* HTAcountDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountDetailCell.h; sourceTree = "<group>"; };
+		FB2D58AA20187A190031D063 /* HTAcountDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountDetailCell.m; sourceTree = "<group>"; };
+		FB2D58AB20187A190031D063 /* HTAcountDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTAcountDetailCell.xib; sourceTree = "<group>"; };
+		FB2D58AE201884570031D063 /* HTAcountDetailSubPasswordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAcountDetailSubPasswordCell.h; sourceTree = "<group>"; };
+		FB2D58AF201884570031D063 /* HTAcountDetailSubPasswordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAcountDetailSubPasswordCell.m; sourceTree = "<group>"; };
+		FB2D58B0201884570031D063 /* HTAcountDetailSubPasswordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTAcountDetailSubPasswordCell.xib; sourceTree = "<group>"; };
 		FB7E7C282011DDE700158EF9 /* DKNightVersionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKNightVersionManager.m; sourceTree = "<group>"; };
 		FB7E7C292011DDE700158EF9 /* NSObject+Night.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Night.m"; sourceTree = "<group>"; };
 		FB7E7C2A2011DDE700158EF9 /* DKAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAlpha.m; sourceTree = "<group>"; };
@@ -794,6 +812,40 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		FB2D589E201860250031D063 /* 查看详情 */ = {
+			isa = PBXGroup;
+			children = (
+				FB2D58A3201866090031D063 /* View */,
+				FB2D589F201860E50031D063 /* Controller */,
+			);
+			path = "查看详情";
+			sourceTree = "<group>";
+		};
+		FB2D589F201860E50031D063 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB2D58A0201861AD0031D063 /* HTAcountDetailVC.h */,
+				FB2D58A1201861AD0031D063 /* HTAcountDetailVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB2D58A3201866090031D063 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB2D58A4201866BC0031D063 /* HTAcountDetailHeaderCell.h */,
+				FB2D58A5201866BC0031D063 /* HTAcountDetailHeaderCell.m */,
+				FB2D58A6201866BC0031D063 /* HTAcountDetailHeaderCell.xib */,
+				FB2D58A920187A190031D063 /* HTAcountDetailCell.h */,
+				FB2D58AA20187A190031D063 /* HTAcountDetailCell.m */,
+				FB2D58AB20187A190031D063 /* HTAcountDetailCell.xib */,
+				FB2D58AE201884570031D063 /* HTAcountDetailSubPasswordCell.h */,
+				FB2D58AF201884570031D063 /* HTAcountDetailSubPasswordCell.m */,
+				FB2D58B0201884570031D063 /* HTAcountDetailSubPasswordCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FB7E7C242011DDE700158EF9 /* Class2.0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -969,7 +1021,6 @@
 				FB7E7C9F2011F48700158EF9 /* 分类 */,
 				FB7E7CA22011F4A700158EF9 /* 设置 */,
 				FB7E7CA32011F56200158EF9 /* 数据库模型(model) */,
-				FB7E7CA12011F4A000158EF9 /* 添加备忘录 */,
 				FB7E7CA02011F48D00158EF9 /* 添加帐号 */,
 			);
 			path = Main;
@@ -978,6 +1029,7 @@
 		FB7E7C9F2011F48700158EF9 /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
+				FB2D589E201860250031D063 /* 查看详情 */,
 				FB2D58982016FE150031D063 /* 按分类查看 */,
 				FB7E7CAC2013110B00158EF9 /* 新增分类 */,
 				FB7E7CA82013101200158EF9 /* Controller */,
@@ -992,13 +1044,6 @@
 				FB7E7CA72012E85900158EF9 /* Controller */,
 			);
 			path = "添加帐号";
-			sourceTree = "<group>";
-		};
-		FB7E7CA12011F4A000158EF9 /* 添加备忘录 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "添加备忘录";
 			sourceTree = "<group>";
 		};
 		FB7E7CA22011F4A700158EF9 /* 设置 */ = {
@@ -1175,9 +1220,12 @@
 				CB898BDD1EBB804600989106 /* photoShutter2.caf in Resources */,
 				CBC62E032015C1680050A3EF /* HTPassWordAddCell.xib in Resources */,
 				1C4EB2C61EA4A665009A1B3D /* Info.plist in Resources */,
+				FB2D58A8201866BC0031D063 /* HTAcountDetailHeaderCell.xib in Resources */,
 				1C895EF61EB5E6D000ACBED0 /* LICENSE in Resources */,
 				FB815E742014250000327A43 /* kindList.plist in Resources */,
+				FB2D58B2201884570031D063 /* HTAcountDetailSubPasswordCell.xib in Resources */,
 				CBF589041EA3AA2900E7327B /* LaunchScreen.storyboard in Resources */,
+				FB2D58AD20187A190031D063 /* HTAcountDetailCell.xib in Resources */,
 				CBC62E1320177D420050A3EF /* HTAcountListCell.xib in Resources */,
 				FB2D58902016CAC30031D063 /* HTAcountRemarksCell.xib in Resources */,
 				FB7E7C902011DDE800158EF9 /* Info.plist in Resources */,
@@ -1268,6 +1316,7 @@
 				FB7E7CA62012E3F100158EF9 /* HTMainAccountsModel.m in Sources */,
 				FB7E7C962011DF1500158EF9 /* NSString+HTBigNums.m in Sources */,
 				FB7E7CB72013121B00158EF9 /* XYTabBarController.m in Sources */,
+				FB2D58B1201884570031D063 /* HTAcountDetailSubPasswordCell.m in Sources */,
 				1C5EDF441EC4097E00002A46 /* YYTextMagnifier.m in Sources */,
 				FB7E7C8E2011DDE800158EF9 /* DKDeallocBlockExecutor.m in Sources */,
 				FB7E7C772011DDE800158EF9 /* UITableView+Night.m in Sources */,
@@ -1283,6 +1332,7 @@
 				1C1DB6581EF7805A000E6AEF /* HTTools+Image.m in Sources */,
 				1C1DB6631EF7805A000E6AEF /* UILabel+HTSpace.m in Sources */,
 				1C5EDF471EC4097E00002A46 /* YYTextAttribute.m in Sources */,
+				FB2D58A7201866BC0031D063 /* HTAcountDetailHeaderCell.m in Sources */,
 				1C1DB65B1EF7805A000E6AEF /* HTTools+SafariService.m in Sources */,
 				FB7E7C8A2011DDE800158EF9 /* UISearchBar+Keyboard.m in Sources */,
 				1C4EB2CA1EA4A665009A1B3D /* MadokaTextField.swift in Sources */,
@@ -1326,6 +1376,7 @@
 				FB7E7C892011DDE800158EF9 /* UITextView+Keyboard.m in Sources */,
 				CBC62E1220177D420050A3EF /* HTAcountListCell.m in Sources */,
 				1C5EDF481EC4097E00002A46 /* YYTextParser.m in Sources */,
+				FB2D58A2201861AD0031D063 /* HTAcountDetailVC.m in Sources */,
 				FB2D58932016D0970031D063 /* NSString+HTTools.m in Sources */,
 				1C5EDF421EC4097E00002A46 /* YYTextLayout.m in Sources */,
 				1C11E4881EB82B7900B00935 /* HTEncryptionAndDecryption.m in Sources */,
@@ -1371,6 +1422,7 @@
 				1C5EDF4C1EC4097E00002A46 /* NSParagraphStyle+YYText.m in Sources */,
 				CB4981F41EA62582000E0792 /* ALActionSheetView.m in Sources */,
 				FB7E7C762011DDE800158EF9 /* DKImage.m in Sources */,
+				FB2D58AC20187A190031D063 /* HTAcountDetailCell.m in Sources */,
 				1C1DB6521EF7805A000E6AEF /* HTTools+AOP.m in Sources */,
 				1C4EB2C51EA4A665009A1B3D /* HoshiTextField.swift in Sources */,
 				1C5EDF451EC4097E00002A46 /* YYTextSelectionView.m in Sources */,

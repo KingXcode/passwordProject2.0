@@ -9,6 +9,8 @@
 #import "HTAcountListVC.h"
 #import "HTAcountAddVC.h"
 #import "HTAcountListCell.h"
+#import "HTAcountDetailVC.h"
+
 
 @interface HTAcountListVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,weak) UITableView * tableView;
@@ -112,8 +114,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     RLMResults<HTMainAccountsModel *> *all = [HTMainAccountsModel objectsWhere:[NSString stringWithFormat:@"k_id = '%@'",self.k_id]];
     HTMainAccountsModel *model = [all objectAtIndex:indexPath.row];
-    HTAcountAddVC *vc = [[HTAcountAddVC alloc]initWithId:model.a_id];
-    [self.navigationController pushViewController:vc animated:YES];
+    
+    HTAcountDetailVC *v = [[HTAcountDetailVC alloc]init];
+    v.a_id = model.a_id;
+    [self.navigationController pushViewController:v animated:YES];
+
+//    HTAcountAddVC *vc = [[HTAcountAddVC alloc]initWithId:model.a_id];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
