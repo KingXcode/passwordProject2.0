@@ -192,11 +192,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
--(void)copy:(UIMenuController *)menu
-{
-    
-}
-
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 0.1;
