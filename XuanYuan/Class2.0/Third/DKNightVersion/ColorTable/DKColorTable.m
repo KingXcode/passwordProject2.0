@@ -71,9 +71,9 @@ UIColor *DKColorFromRGBA(NSUInteger hex) {
                                                           error:&error];
 
     if (error)
-        NSLog(@"Error reading file: %@", error.localizedDescription);
+    NSLog(@"Error reading file: %@", error.localizedDescription);
 
-    NSLog(@"DKColorTable:\n%@", fileContents);
+//    NSLog(@"DKColorTable:\n%@", fileContents);
 
 
     NSMutableArray *tempEntries = [[fileContents componentsSeparatedByString:@"\n"] mutableCopy];

@@ -86,6 +86,7 @@
 		CBC62E082015E8180050A3EF /* HTInfoPassWordAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC62E062015E8180050A3EF /* HTInfoPassWordAddCell.xib */; };
 		CBC62E1220177D420050A3EF /* HTAcountListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC62E1020177D420050A3EF /* HTAcountListCell.m */; };
 		CBC62E1320177D420050A3EF /* HTAcountListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC62E1120177D420050A3EF /* HTAcountListCell.xib */; };
+		CBC62E18201DEF520050A3EF /* HTMemoAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC62E17201DEF520050A3EF /* HTMemoAddVC.m */; };
 		CBF588F61EA3AA2900E7327B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF588F51EA3AA2900E7327B /* main.m */; };
 		CBF588F91EA3AA2900E7327B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF588F81EA3AA2900E7327B /* AppDelegate.m */; };
 		CBF588FF1EA3AA2900E7327B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF588FD1EA3AA2900E7327B /* Main.storyboard */; };
@@ -308,6 +309,8 @@
 		CBC62E0F20177D420050A3EF /* HTAcountListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAcountListCell.h; sourceTree = "<group>"; };
 		CBC62E1020177D420050A3EF /* HTAcountListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAcountListCell.m; sourceTree = "<group>"; };
 		CBC62E1120177D420050A3EF /* HTAcountListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTAcountListCell.xib; sourceTree = "<group>"; };
+		CBC62E16201DEF520050A3EF /* HTMemoAddVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMemoAddVC.h; sourceTree = "<group>"; };
+		CBC62E17201DEF520050A3EF /* HTMemoAddVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMemoAddVC.m; sourceTree = "<group>"; };
 		CBF588F11EA3AA2900E7327B /* XuanYuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XuanYuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF588F51EA3AA2900E7327B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CBF588F71EA3AA2900E7327B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -739,6 +742,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CBC62E14201DEF1B0050A3EF /* 新增备忘录 */ = {
+			isa = PBXGroup;
+			children = (
+				CBC62E15201DEF260050A3EF /* Controller */,
+			);
+			path = "新增备忘录";
+			sourceTree = "<group>";
+		};
+		CBC62E15201DEF260050A3EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CBC62E16201DEF520050A3EF /* HTMemoAddVC.h */,
+				CBC62E17201DEF520050A3EF /* HTMemoAddVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CBF588E81EA3AA2800E7327B = {
 			isa = PBXGroup;
 			children = (
@@ -1022,6 +1042,7 @@
 				FB7E7CA22011F4A700158EF9 /* 设置 */,
 				FB7E7CA32011F56200158EF9 /* 数据库模型(model) */,
 				FB7E7CA02011F48D00158EF9 /* 添加帐号 */,
+				CBC62E14201DEF1B0050A3EF /* 新增备忘录 */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1029,10 +1050,10 @@
 		FB7E7C9F2011F48700158EF9 /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
+				FB7E7CA82013101200158EF9 /* Controller */,
 				FB2D589E201860250031D063 /* 查看详情 */,
 				FB2D58982016FE150031D063 /* 按分类查看 */,
-				FB7E7CAC2013110B00158EF9 /* 新增分类 */,
-				FB7E7CA82013101200158EF9 /* Controller */,
+				FB7E7CAC2013110B00158EF9 /* 选择-新增分类 */,
 			);
 			path = "分类";
 			sourceTree = "<group>";
@@ -1083,12 +1104,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		FB7E7CAC2013110B00158EF9 /* 新增分类 */ = {
+		FB7E7CAC2013110B00158EF9 /* 选择-新增分类 */ = {
 			isa = PBXGroup;
 			children = (
 				FB7E7CAD2013111600158EF9 /* Controller */,
 			);
-			path = "新增分类";
+			path = "选择-新增分类";
 			sourceTree = "<group>";
 		};
 		FB7E7CAD2013111600158EF9 /* Controller */ = {
@@ -1321,6 +1342,7 @@
 				FB7E7C8E2011DDE800158EF9 /* DKDeallocBlockExecutor.m in Sources */,
 				FB7E7C772011DDE800158EF9 /* UITableView+Night.m in Sources */,
 				FB815E7E2014443F00327A43 /* HTAcountAddHeaderCell.m in Sources */,
+				CBC62E18201DEF520050A3EF /* HTMemoAddVC.m in Sources */,
 				1C4EB2C91EA4A665009A1B3D /* KaedeTextField.swift in Sources */,
 				FB7E7C742011DDE800158EF9 /* DKAlpha.m in Sources */,
 				1C1DB6501EF7805A000E6AEF /* NSObject+HTAOP.m in Sources */,

@@ -55,8 +55,9 @@
     [rightBtn addClickBlock:^(id obj) {
         HTMainAccountsKindItem *item = [[HTMainAccountsKindItem alloc]init];
         item.kindName = model.kindName;
-        item.k_id = model.k_id;
+        item.k_push_id = model.k_push_id;
         item.kIconType = model.kIconType;
+        item.k_id = model.k_id;
         HTAcountAddVC *vc = [[HTAcountAddVC alloc]initWithKindModel:item];
         [__self.navigationController pushViewController:vc animated:YES];
     }];

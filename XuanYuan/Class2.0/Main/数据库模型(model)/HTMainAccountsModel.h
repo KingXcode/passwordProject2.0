@@ -19,7 +19,8 @@ RLM_ARRAY_TYPE(HTMainAccountsSubModel)
 
 
 @interface HTMainAccountsModel : RLMObject
-@property  NSString * k_id;         //分类id   *******   必须不为空
+@property  NSString * k_push_id;    //分类跳转使用的id    默认为@"acount"
+@property  NSString * k_id;         //分类id   *******   必须不为空 默认为 @"0"
 @property  NSString * a_id;         //账号id   *******   必须不为空
 @property  NSString * accountTitle; //标题  *******      必须不为空
 
@@ -51,7 +52,9 @@ RLM_ARRAY_TYPE(HTMainAccountsModel)
 @interface HTMainAccountsKindModel : RLMObject
 @property  NSString * kindName;
 @property  NSInteger  kIconType;     //icon类型,实际上只是为了取图标使用  默认为0;
-@property  NSString * k_id;          
+@property  NSString * k_push_id;     //分类跳转使用的id    默认为acount
+@property  NSString * k_id;
+//@property  RLMArray<HTMainAccountsModel> *list;
 @end
 RLM_ARRAY_TYPE(HTMainAccountsKindModel)
 
@@ -59,6 +62,7 @@ RLM_ARRAY_TYPE(HTMainAccountsKindModel)
 @interface HTMainAccountsKindItem : NSObject
 @property (nonatomic,copy) NSString * kindName;
 @property (nonatomic,assign) NSInteger  kIconType;
+@property (nonatomic,copy) NSString * k_push_id;
 @property (nonatomic,copy) NSString * k_id;
 @end
 

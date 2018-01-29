@@ -82,7 +82,8 @@
     if (self.isEdit == NO) {
         self.title = @"新增";
         double creatTime = [[NSDate date]timeIntervalSince1970];
-        _saveModel = [[HTMainAccountsModel alloc]initWithValue:@{@"k_id":self.item.k_id,
+        _saveModel = [[HTMainAccountsModel alloc]initWithValue:@{@"k_push_id":self.item.k_push_id,
+                                                                 @"k_id":self.item.k_id,
                                                                  @"a_id":@(creatTime).stringValue,
                                                                  @"creatTime":@(creatTime).stringValue}];
     }
@@ -98,6 +99,7 @@
         {
             HTMainAccountsModel *model = modelList.firstObject;
             _saveModel = [[HTMainAccountsModel alloc]init];
+            _saveModel.k_push_id = model.k_push_id;
             _saveModel.k_id = model.k_id;
             _saveModel.a_id = model.a_id;
             _saveModel.creatTime = model.creatTime;
@@ -192,6 +194,7 @@
             HTMainAccountsKindModel *model = [[HTMainAccountsKindModel alloc]init];
             model.kindName = self.item.kindName;
             model.kIconType = self.item.kIconType;
+            model.k_push_id = self.item.k_push_id;
             model.k_id = self.item.k_id;
             [realm addObject:model];
         }

@@ -4,19 +4,23 @@
 <array>
 	<dict>
 		<key>kIconType</key>
-		<string>000</string>
+		<string>0</string>
+		<key>k_push_id</key>
+		<string>acount</string>
 		<key>k_id</key>
-		<string>niesiyang_0</string>
+		<string>0</string>
 		<key>kindName</key>
 		<string>帐号信息</string>
 	</dict>
 	<dict>
 		<key>kIconType</key>
-		<string>111</string>
+		<string>1</string>
+		<key>k_push_id</key>
+		<string>acount</string>
 		<key>k_id</key>
-		<string>niesiyang_1</string>
+		<string>1</string>
 		<key>kindName</key>
-		<string>安全备注</string>
+		<string>测试信息</string>
 	</dict>
 </array>
 </plist>

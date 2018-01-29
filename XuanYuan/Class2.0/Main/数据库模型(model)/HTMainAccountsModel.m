@@ -27,7 +27,10 @@
 
 @implementation HTMainAccountsModel
 + (NSArray *)requiredProperties {
-    return @[@"accountTitle",@"k_id",@"a_id"];
+    return @[@"accountTitle",
+             @"k_push_id",
+             @"a_id",
+             @"k_id"];
 }
 + (NSString *)primaryKey {
     return @"a_id";
@@ -35,15 +38,21 @@
 //设置属性默认值
 + (NSDictionary *)defaultPropertyValues{
     return @{@"isCollect":@(NO),
-             @"iconType":@(0)
+             @"iconType":@(0),
+             @"k_push_id":@"acount",
+             @"k_id":@"0"
              };
 }
 @end
 
 @implementation HTMainAccountsKindModel
 + (NSArray *)requiredProperties {
-    return @[@"kindName",@"k_id"];
+    return @[@"kindName",
+             @"k_push_id",
+             @"k_id"];
 }
+
+
 @end
 
 

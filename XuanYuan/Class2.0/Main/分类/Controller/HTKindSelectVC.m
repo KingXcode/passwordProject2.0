@@ -79,7 +79,6 @@
         make.top.mas_equalTo(self.view);
         make.left.bottom.right.equalTo(self.view);
     }];
-
 }
 
 
