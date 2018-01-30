@@ -10,7 +10,7 @@
 #import "HTKindAddVC.h"
 #import "HTAcountListVC.h"
 
-@interface HTKindSelectVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface HTKindSelectVC ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 @property (nonatomic,weak) UITableView * tableView;
 
 @end
@@ -73,6 +73,8 @@
     tableView.estimatedRowHeight = 0;
     tableView.estimatedSectionHeaderHeight = 0;
     tableView.estimatedSectionFooterHeight = 0;
+    tableView.emptyDataSetSource = self;
+    tableView.emptyDataSetDelegate = self;
     self.tableView = tableView;
     [self.view addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -81,6 +83,9 @@
     }];
 }
 
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIImage imageNamed:@"zanwei_Icon"];
+}
 
 #pragma -mark- tableView delegate  datasuoce
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

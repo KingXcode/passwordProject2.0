@@ -12,7 +12,7 @@
 #import "HTAcountDetailVC.h"
 
 
-@interface HTAcountListVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface HTAcountListVC ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 @property (nonatomic,weak) UITableView * tableView;
 
 @end
@@ -74,12 +74,18 @@
     tableView.estimatedRowHeight = 0;
     tableView.estimatedSectionHeaderHeight = 0;
     tableView.estimatedSectionFooterHeight = 0;
+    tableView.emptyDataSetSource = self;
+    tableView.emptyDataSetDelegate = self;
     self.tableView = tableView;
     [self.view addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.view);
         make.left.bottom.right.equalTo(self.view);
     }];
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIImage imageNamed:@"zanwei_Icon"];
 }
 
 #pragma -mark- tableView delegate  datasuoce
