@@ -9,6 +9,7 @@ NORMAL   NIGHT    CUSTOM_0
 #666666  #666666  #666666   textColor_1
 #999999  #999999  #999999   textColor_2
 #53cac3  #53cac3  #53cac3   textColor_3
+#f75567  #f75567  #f75567   textRedColor
 
 
 

@@ -242,7 +242,13 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    if (self.isEdit) {
+        return 5;
+    }
+    else
+    {
+        return 4;
+    }
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -256,6 +262,9 @@
         return self.saveModel.infoPassWord.count;
     }
     if (section == 3) {
+        return 1;
+    }
+    if (section == 4) {
         return 1;
     }
     return 0;
@@ -316,6 +325,17 @@
         [cell configText:self.saveModel.remarks];
         return cell;
     }
+    if (indexPath.section == 4)
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
+            cell.textLabel.dk_textColorPicker = DKColorPickerWithKey(textRedColor);
+        }
+        cell.textLabel.font = [UIFont systemFontOfSize:14];
+        cell.textLabel.text = @"删除";
+        return cell;
+    }
     
     return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
 }
@@ -362,6 +382,9 @@
         }
         return 37+textHeight;
     }
+    if (indexPath.section == 4) {
+        return 44;
+    }
     
     return 0;
 }
@@ -378,6 +401,9 @@
         return 44;
     }
     if (section == 3) {
+        return 10;
+    }
+    if (section == 4) {
         return 10;
     }
     return 0.1;
@@ -423,7 +449,24 @@
         }];
         [self.navigationController pushViewController:vc animated:YES];
     }
-    
+    if (indexPath.section == 4)
+    {
+        UIAlertAction *action0 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            NSString *pred = [NSString stringWithFormat:@"a_id = '%@'",self.a_id];
+            RLMResults<HTMainAccountsModel *> *modelList = [HTMainAccountsModel objectsWhere:pred];
+            RLMRealm *realm = [RLMRealm defaultRealm];
+            [realm beginWriteTransaction];
+            [realm deleteObject:modelList.firstObject];
+            [realm commitWriteTransaction];
+            [self.navigationController popToViewController:self.navigationController.viewControllers[1] animated:YES];
+        }];
+        UIAlertController *vc = [UIAlertController alertControllerWithTitle:nil message:@"真的要删除吗?" preferredStyle:UIAlertControllerStyleAlert];
+        [vc addAction:action0];
+        [vc addAction:action1];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
 }
 
 

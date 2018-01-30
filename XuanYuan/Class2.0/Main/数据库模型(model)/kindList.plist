@@ -12,15 +12,5 @@
 		<key>kindName</key>
 		<string>帐号信息</string>
 	</dict>
-	<dict>
-		<key>kIconType</key>
-		<string>1</string>
-		<key>k_push_id</key>
-		<string>acount</string>
-		<key>k_id</key>
-		<string>1</string>
-		<key>kindName</key>
-		<string>测试信息</string>
-	</dict>
 </array>
 </plist>

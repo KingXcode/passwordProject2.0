@@ -29,15 +29,13 @@
 -(void)loadData
 {
     RLMResults<HTMainAccountsKindModel *> *modelList = [HTMainAccountsKindModel allObjects];
+    NSMutableArray *dataArray = [NSMutableArray array];
 
     if (modelList.count<=0) {
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"kindList" ofType:@"plist"];
         NSArray *array = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
-        NSMutableArray *dataArray = [NSMutableArray array];
         for (NSDictionary *dict in array) {
             HTMainAccountsKindItem *item = [HTMainAccountsKindItem mj_objectWithKeyValues:dict];
-            [dataArray addObject:item];
-            
             HTMainAccountsKindModel *model = [[HTMainAccountsKindModel alloc]init];
             model.kindName = item.kindName;
             model.kIconType = item.kIconType;
@@ -47,23 +45,18 @@
             [realm beginWriteTransaction];
             [realm addObject:model];
             [realm commitWriteTransaction];
-            
         }
-        _dataArray = dataArray;
     }
-    else
-    {
-        NSMutableArray *array = [NSMutableArray array];
-        for (HTMainAccountsKindModel *model in modelList) {
-            HTMainAccountsKindItem *item = [[HTMainAccountsKindItem alloc]init];
-            item.kindName = model.kindName;
-            item.kIconType = model.kIconType;
-            item.k_push_id = model.k_push_id;
-            item.k_id = model.k_id;
-            [array addObject:item];
-        }
-        _dataArray = array;
+
+    for (HTMainAccountsKindModel *model in modelList) {
+        HTMainAccountsKindItem *item = [[HTMainAccountsKindItem alloc]init];
+        item.kindName = model.kindName;
+        item.kIconType = model.kIconType;
+        item.k_push_id = model.k_push_id;
+        item.k_id = model.k_id;
+        [dataArray addObject:item];
     }
+    _dataArray = dataArray;
 
 }
 
@@ -158,6 +151,46 @@
 }
 
 #pragma -mark- tableView delegate  datasuoce
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HTMainAccountsKindItem *item = self.dataArray[indexPath.row];
+
+    if (![item.k_id isEqualToString:@"0"]) {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+- (nullable NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    __weak typeof(self) __self = self;
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        HTMainAccountsKindItem *item = __self.dataArray[indexPath.row];
+        RLMResults<HTMainAccountsKindModel * > *modelList = [HTMainAccountsKindModel objectsWhere:[NSString stringWithFormat:@"k_id = '%@'",item.k_id]];
+        
+        RLMResults<HTMainAccountsModel * > *acountModelList = [HTMainAccountsModel objectsWhere:[NSString stringWithFormat:@"k_id = '%@'",item.k_id]];
+        
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        [realm beginWriteTransaction];
+
+        for (HTMainAccountsKindModel *kModel in modelList) {
+            [realm deleteObject:kModel];
+        }
+        
+        for (HTMainAccountsModel *aModel in acountModelList) {
+            aModel.k_id = @"0";
+        }
+        [realm commitWriteTransaction];
+        [__self loadData];
+        [__self.tableView reloadData];
+    }];
+    return @[deleteAction];
+}
+
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
