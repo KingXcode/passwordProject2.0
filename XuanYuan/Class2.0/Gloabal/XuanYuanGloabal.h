@@ -13,6 +13,7 @@
 #import "XYBaseViewController.h"
 #import "HTMainAccountsModel.h"
 #import "HTToolSet.h"
+#import "HTConfigManager.h"
 
 
 #define XuanYuanAeskey @"cn.niesiyang.aeskey"

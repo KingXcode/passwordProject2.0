@@ -153,6 +153,9 @@
 		FB815E7E2014443F00327A43 /* HTAcountAddHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB815E7C2014443F00327A43 /* HTAcountAddHeaderCell.m */; };
 		FB815E7F2014443F00327A43 /* HTAcountAddHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB815E7D2014443F00327A43 /* HTAcountAddHeaderCell.xib */; };
 		FBD18EEA201315880094AC0F /* XYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD18EE9201315880094AC0F /* XYSettingViewController.m */; };
+		FBF29AD820204A3F00AACF19 /* XYSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF29AD620204A3F00AACF19 /* XYSettingCell.m */; };
+		FBF29AD920204A3F00AACF19 /* XYSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBF29AD720204A3F00AACF19 /* XYSettingCell.xib */; };
+		FBF29ADC2020532300AACF19 /* HTConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF29ADA2020532300AACF19 /* HTConfigManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -435,6 +438,11 @@
 		FB815E7D2014443F00327A43 /* HTAcountAddHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTAcountAddHeaderCell.xib; sourceTree = "<group>"; };
 		FBD18EE8201315880094AC0F /* XYSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYSettingViewController.h; sourceTree = "<group>"; };
 		FBD18EE9201315880094AC0F /* XYSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYSettingViewController.m; sourceTree = "<group>"; };
+		FBF29AD520204A3F00AACF19 /* XYSettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYSettingCell.h; sourceTree = "<group>"; };
+		FBF29AD620204A3F00AACF19 /* XYSettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYSettingCell.m; sourceTree = "<group>"; };
+		FBF29AD720204A3F00AACF19 /* XYSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XYSettingCell.xib; sourceTree = "<group>"; };
+		FBF29ADA2020532300AACF19 /* HTConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTConfigManager.m; sourceTree = "<group>"; };
+		FBF29ADB2020532300AACF19 /* HTConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTConfigManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1029,6 +1037,8 @@
 		FB7E7C972011E0D000158EF9 /* Gloabal */ = {
 			isa = PBXGroup;
 			children = (
+				FBF29ADB2020532300AACF19 /* HTConfigManager.h */,
+				FBF29ADA2020532300AACF19 /* HTConfigManager.m */,
 				1C8387011EB197DD006A8A71 /* XuanYuanGloabal.h */,
 			);
 			path = Gloabal;
@@ -1070,6 +1080,7 @@
 		FB7E7CA22011F4A700158EF9 /* 设置 */ = {
 			isa = PBXGroup;
 			children = (
+				FBF29AD420204A2000AACF19 /* View */,
 				FBD18EE72013156E0094AC0F /* Controller */,
 			);
 			path = "设置";
@@ -1174,6 +1185,16 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		FBF29AD420204A2000AACF19 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBF29AD520204A3F00AACF19 /* XYSettingCell.h */,
+				FBF29AD620204A3F00AACF19 /* XYSettingCell.m */,
+				FBF29AD720204A3F00AACF19 /* XYSettingCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1246,6 +1267,7 @@
 				FB815E742014250000327A43 /* kindList.plist in Resources */,
 				FB2D58B2201884570031D063 /* HTAcountDetailSubPasswordCell.xib in Resources */,
 				CBF589041EA3AA2900E7327B /* LaunchScreen.storyboard in Resources */,
+				FBF29AD920204A3F00AACF19 /* XYSettingCell.xib in Resources */,
 				FB2D58AD20187A190031D063 /* HTAcountDetailCell.xib in Resources */,
 				CBC62E1320177D420050A3EF /* HTAcountListCell.xib in Resources */,
 				FB2D58902016CAC30031D063 /* HTAcountRemarksCell.xib in Resources */,
@@ -1327,6 +1349,7 @@
 				1C4EB2CC1EA4A665009A1B3D /* TextFieldEffects.swift in Sources */,
 				FB2D58972016D3A30031D063 /* HTAcountAddRemarksVC.m in Sources */,
 				FB815E7720142DC400327A43 /* UIView+HTBorderLine.m in Sources */,
+				FBF29AD820204A3F00AACF19 /* XYSettingCell.m in Sources */,
 				1C1DB6551EF7805A000E6AEF /* HTTools+Date.m in Sources */,
 				1C1DB6641EF7805A000E6AEF /* UIResponder+HTFirstResponder.m in Sources */,
 				1C1DB64F1EF7805A000E6AEF /* NSDate+HTExtension.m in Sources */,
@@ -1410,6 +1433,7 @@
 				1C5EDF431EC4097E00002A46 /* YYTextLine.m in Sources */,
 				1C5EDF491EC4097E00002A46 /* YYTextRubyAnnotation.m in Sources */,
 				FB7E7C842011DDE800158EF9 /* UIPageControl+Night.m in Sources */,
+				FBF29ADC2020532300AACF19 /* HTConfigManager.m in Sources */,
 				FB7E7CAB201310DB00158EF9 /* HTKindSelectVC.m in Sources */,
 				1C1DB6661EF7805A000E6AEF /* UIScrollView+HTPages.m in Sources */,
 				1C1DB6571EF7805A000E6AEF /* HTTools+HTRegularExpression.m in Sources */,

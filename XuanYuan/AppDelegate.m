@@ -77,10 +77,11 @@
 }
 
 //禁用三方键盘
-//- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(NSString *)extensionPointIdentifier
-//{
-//    return NO;
-//}
+- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(NSString *)extensionPointIdentifier
+{
+    return [[HTConfigManager sharedconfigManager] isAllowThirdKeyboard];
+}
+
 
 
 
