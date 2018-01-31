@@ -19,7 +19,6 @@
  */
 -(void)clearAllData;
 
-
 /**
  默认设置
  */

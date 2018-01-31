@@ -87,6 +87,7 @@
     return [UIImage imageNamed:@"zanwei_Icon"];
 }
 
+
 #pragma -mark- tableView delegate  datasuoce
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -122,6 +123,7 @@
 {
     return 50;
 }
+
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

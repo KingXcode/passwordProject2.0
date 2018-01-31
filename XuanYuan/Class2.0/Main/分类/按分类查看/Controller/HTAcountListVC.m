@@ -59,7 +59,8 @@
         item.kIconType = model.kIconType;
         item.k_id = model.k_id;
         HTAcountAddVC *vc = [[HTAcountAddVC alloc]initWithKindModel:item];
-        [__self.navigationController pushViewController:vc animated:YES];
+        XYNavigationController *nav = (XYNavigationController *)__self.navigationController;
+        [nav pushViewController:vc animated:YES];
     }];
     
     
@@ -86,6 +87,16 @@
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
     return [UIImage imageNamed:@"zanwei_Icon"];
+}
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *title = @"您的账号库还是空的哦~";
+    NSDictionary *attributes = @{
+                                 NSFontAttributeName:[UIFont boldSystemFontOfSize:15.0f],
+                                 NSForegroundColorAttributeName:RGBHex(0x999999)
+                                 };
+    NSMutableAttributedString *st = [[NSMutableAttributedString alloc]initWithString:title attributes:attributes];
+    return st;
 }
 #pragma -mark- tableView delegate  datasuoce
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -124,9 +135,6 @@
     HTAcountDetailVC *v = [[HTAcountDetailVC alloc]init];
     v.a_id = model.a_id;
     [self.navigationController pushViewController:v animated:YES];
-
-//    HTAcountAddVC *vc = [[HTAcountAddVC alloc]initWithId:model.a_id];
-//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

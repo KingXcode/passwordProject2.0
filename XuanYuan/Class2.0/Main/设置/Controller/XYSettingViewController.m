@@ -8,6 +8,7 @@
 
 #import "XYSettingViewController.h"
 #import "XYSettingCell.h"
+#import "HTSettingPasswordViewController.h"
 
 @interface XYSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,weak) UITableView * tableView;
@@ -21,8 +22,10 @@
     self = [super initWithCoder:coder];
     if (self) {
         _dataArray = [NSMutableArray array];
-        [_dataArray addObject:@[@"清除缓存",@"恢复默认设置",@"允许自定义键盘",@"入侵记录"]];
-        [_dataArray addObject:@[@"启动密码"]];
+        
+        [_dataArray addObject:@[@"清除缓存"]];
+        [_dataArray addObject:@[@"恢复默认设置",@"允许自定义键盘",@"入侵记录"]];
+        [_dataArray addObject:@[@"设置启动密码"]];
         [_dataArray addObject:@[@"吐槽微密"]];
         [_dataArray addObject:@[@"Copyright(c)2017"]];
     }
@@ -81,12 +84,6 @@
     return array.count;;
 }
 
-/*
- [_dataArray addObject:@[@"清除缓存",@"恢复默认设置",@"允许自定义键盘",@"入侵记录"]];
- [_dataArray addObject:@[@"启动密码"]];
- [_dataArray addObject:@[@"吐槽微密"]];
- [_dataArray addObject:@[@"Copyright(c)2017"]];
- */
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *title = self.dataArray[indexPath.section][indexPath.row];
@@ -114,13 +111,16 @@
     {
         
     }
-    if ([title isEqualToString:@"启动密码"])
+    if ([title isEqualToString:@"设置启动密码"])
     {
         
     }
     if ([title isEqualToString:@"吐槽微密"])
     {
-        
+        BOOL isSend = [[HTConfigManager sharedconfigManager] canSendEmail];
+        if (!isSend) {
+           title = [title stringByAppendingString:@"(不可用)"];
+        }
     }
     if ([title isEqualToString:@"Copyright(c)2017"])
     {
@@ -131,7 +131,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
         [cell ht_bottomLineShow];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.font = [UIFont systemFontOfSize:15];
     }
     cell.textLabel.text = title;
@@ -165,7 +164,142 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSString *title = self.dataArray[indexPath.section][indexPath.row];
+    
+    if ([title isEqualToString:@"清除缓存"])
+    {
+        [self unopenFunction];
+    }
+    if ([title isEqualToString:@"恢复默认设置"])
+    {
+        [self defaultSetting];
+    }
+    if ([title isEqualToString:@"允许自定义键盘"])
+    {
+
+    }
+    if ([title isEqualToString:@"入侵记录"])
+    {
+        [self unopenFunction];
+    }
+    if ([title isEqualToString:@"设置启动密码"])
+    {
+        if (![[HTConfigManager sharedconfigManager]isOpenStartPassword]) {
+            HTSettingPasswordViewController *vc = instantiateStoryboardControllerWithIdentifier(@"HTSettingPasswordViewController");
+            [self.navigationController pushViewController:vc animated:YES];
+        }else{
+            [self cancelPassword];
+        }
+    }
+    if ([title isEqualToString:@"吐槽微密"])
+    {
+        BOOL isSend = [[HTConfigManager sharedconfigManager] canSendEmail];
+        if (isSend) {
+            [self sendEmail];
+        }
+    }
+    if ([title isEqualToString:@"Copyright(c)2017"])
+    {
+        
+    }
 }
+
+
+-(void)unopenFunction
+{
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:nil message:@"暂未开放该功能" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action0 = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [vc addAction:action0];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+/**
+ 发送邮件
+ */
+-(void)sendEmail
+{
+    NSString *subject = @"微密-反馈邮件";
+    NSString *recipients = @"siyang.nie.520@gmail.com";
+    NSString *body = [NSString stringWithFormat:@"机器型号:%@\n系统版本:%@\n反馈问题:\n",[HTTools deviceVersion],[HTTools phoneVersion]];
+    [[HTConfigManager sharedconfigManager] sendEmailActionWithSubject:subject Recipients:recipients MessageBody:body];
+}
+
+
+//恢复默认设置
+-(void)defaultSetting
+{
+    if ([[HTConfigManager sharedconfigManager]isOpenStartPassword])
+    {
+        [HTProgressHUD showMessage:@"请先取消启动密码" forView:self.view];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self cancelPassword];
+        });
+    }
+    else
+    {
+        UIAlertController *vc = [UIAlertController alertControllerWithTitle:nil message:@"恢复默认设置?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action0 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[HTConfigManager sharedconfigManager]defaultSetting];
+            [self.tableView reloadData];
+        }];
+        [vc addAction:action0];
+        [vc addAction:action1];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+}
+
+//取消启动密码
+-(void)cancelPassword
+{
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"您已经设置过启动密码" message:@"是否需要清空该密码?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *action0 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UITextField *tf = vc.textFields.firstObject;
+        if ([[HTConfigManager sharedconfigManager]checkInputPassword:tf.text])
+        {
+            [[HTConfigManager sharedconfigManager]isOpenStartPassword:NO];
+            [[HTConfigManager sharedconfigManager]startPassword:nil];
+            [HTProgressHUD showMessage:@"取消成功" forView:self.view];
+        }
+        else
+        {
+            [HTProgressHUD showMessage:@"密码错误" forView:self.view];
+        }
+    }];
+    action1.enabled = NO;
+    [vc addAction:action0];
+    [vc addAction:action1];
+    [vc addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.secureTextEntry = YES;
+        __weak typeof(textField) __textField = textField;
+        __weak typeof(action1) __action1 = action1;
+        [textField ht_editingChanged:^{
+            if (__textField.markedTextRange == nil) {
+                if (__textField.text.length>=3)
+                {
+                    __action1.enabled = YES;
+                }
+                else
+                {
+                    __action1.enabled = NO;
+                }
+            }
+        }];
+    }];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+
+
 
 
 

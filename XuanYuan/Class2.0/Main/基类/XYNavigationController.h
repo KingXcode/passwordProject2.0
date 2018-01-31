@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface XYNavigationController : UINavigationController
-
+@property (nonatomic,assign) BOOL isPresentStyle;
 @end

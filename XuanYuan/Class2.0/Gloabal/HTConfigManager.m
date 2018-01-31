@@ -28,7 +28,6 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kStartTouchIDUserDefaults];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kAllowThirdKeyboardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
-
 }
 
 
@@ -46,15 +45,25 @@
 -(BOOL)isOpenStartPassword
 {
     NSNumber *isOpenPassword = [[NSUserDefaults standardUserDefaults] objectForKey:kStartPasswordUserDefaults];
+    if (isOpenPassword == nil) {
+        isOpenPassword = @NO;
+    }
     return isOpenPassword.boolValue;
 }
 
 
 -(void)startPassword:(NSString *)password
 {
-    [[NSUserDefaults standardUserDefaults] setObject:password forKey:kPasswordUserDefaults];
+    if ([HTTools ht_isBlankString:password]) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kPasswordUserDefaults];
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:password forKey:kPasswordUserDefaults];
+    }
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
 -(NSString *)startPassword
 {
     NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:kPasswordUserDefaults];

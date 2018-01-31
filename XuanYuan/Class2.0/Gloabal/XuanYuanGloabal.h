@@ -14,7 +14,10 @@
 #import "HTMainAccountsModel.h"
 #import "HTToolSet.h"
 #import "HTConfigManager.h"
+#import "XYNavigationController.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import "HTProgressHUD.h"
+
 
 #define XuanYuanAeskey @"cn.niesiyang.aeskey"
 //偏好设置
@@ -49,7 +52,7 @@
 
 //实例化故事板的控制器
 #define instantiateStoryboardControllerWithIdentifier(identifier)\
-    [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:identifier];
+    [[UIStoryboard storyboardWithName:@"Main2" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:identifier];
 
 
 //屏幕宽度

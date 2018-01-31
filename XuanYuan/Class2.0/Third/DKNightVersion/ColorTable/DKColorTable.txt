@@ -1,5 +1,6 @@
 NORMAL   NIGHT    CUSTOM_0
 #ffffff  #ffffff  #ffffff   viewBackgroundColor
+#f5f5f5  #f5f5f5  #f5f5f5   viewBackgroundColor2
 #ffffff  #ffffff  #ffffff   TabBarTint
 #428AF7  #428AF7  #428AF7   NavigationBarTintColor
 #ffffff  #ffffff  #ffffff   NavigationBarSettingTintColor

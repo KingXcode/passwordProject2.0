@@ -156,6 +156,10 @@
 		FBF29AD820204A3F00AACF19 /* XYSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF29AD620204A3F00AACF19 /* XYSettingCell.m */; };
 		FBF29AD920204A3F00AACF19 /* XYSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBF29AD720204A3F00AACF19 /* XYSettingCell.xib */; };
 		FBF29ADC2020532300AACF19 /* HTConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF29ADA2020532300AACF19 /* HTConfigManager.m */; };
+		FBF29AE020215FAD00AACF19 /* HTTransitionOne.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF29ADE20215FAD00AACF19 /* HTTransitionOne.m */; };
+		FBF29AE4202192B600AACF19 /* HTInputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF29AE3202192B600AACF19 /* HTInputPasswordViewController.m */; };
+		FBF29AE820219C1600AACF19 /* HTProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF29AE620219C1600AACF19 /* HTProgressHUD.m */; };
+		FBF29AED20219F8600AACF19 /* HTSettingPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF29AEC20219F8600AACF19 /* HTSettingPasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -443,6 +447,14 @@
 		FBF29AD720204A3F00AACF19 /* XYSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XYSettingCell.xib; sourceTree = "<group>"; };
 		FBF29ADA2020532300AACF19 /* HTConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTConfigManager.m; sourceTree = "<group>"; };
 		FBF29ADB2020532300AACF19 /* HTConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTConfigManager.h; sourceTree = "<group>"; };
+		FBF29ADE20215FAD00AACF19 /* HTTransitionOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTransitionOne.m; sourceTree = "<group>"; };
+		FBF29ADF20215FAD00AACF19 /* HTTransitionOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTransitionOne.h; sourceTree = "<group>"; };
+		FBF29AE2202192B600AACF19 /* HTInputPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInputPasswordViewController.h; sourceTree = "<group>"; };
+		FBF29AE3202192B600AACF19 /* HTInputPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInputPasswordViewController.m; sourceTree = "<group>"; };
+		FBF29AE620219C1600AACF19 /* HTProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUD.m; sourceTree = "<group>"; };
+		FBF29AE720219C1600AACF19 /* HTProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUD.h; sourceTree = "<group>"; };
+		FBF29AEB20219F8600AACF19 /* HTSettingPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSettingPasswordViewController.h; sourceTree = "<group>"; };
+		FBF29AEC20219F8600AACF19 /* HTSettingPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSettingPasswordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1027,6 +1039,8 @@
 		FB7E7C932011DE4100158EF9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				FBF29AE520219C1600AACF19 /* HTProgressHUD */,
+				FBF29ADD20215FAD00AACF19 /* Transition */,
 				FB815E6E2013386300327A43 /* UIVIew-分类 */,
 				1C8386FD1EB182AE006A8A71 /* 加密解密 */,
 				1C1DB60E1EF7805A000E6AEF /* HTTools */,
@@ -1080,6 +1094,7 @@
 		FB7E7CA22011F4A700158EF9 /* 设置 */ = {
 			isa = PBXGroup;
 			children = (
+				FBF29AE12021925100AACF19 /* 启动密码页面 */,
 				FBF29AD420204A2000AACF19 /* View */,
 				FBD18EE72013156E0094AC0F /* Controller */,
 			);
@@ -1193,6 +1208,51 @@
 				FBF29AD720204A3F00AACF19 /* XYSettingCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FBF29ADD20215FAD00AACF19 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				FBF29ADE20215FAD00AACF19 /* HTTransitionOne.m */,
+				FBF29ADF20215FAD00AACF19 /* HTTransitionOne.h */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		FBF29AE12021925100AACF19 /* 启动密码页面 */ = {
+			isa = PBXGroup;
+			children = (
+				FBF29AEA20219F6100AACF19 /* Controller */,
+				FBF29AE920219F4800AACF19 /* 设置启动密码页面 */,
+			);
+			path = "启动密码页面";
+			sourceTree = "<group>";
+		};
+		FBF29AE520219C1600AACF19 /* HTProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				FBF29AE720219C1600AACF19 /* HTProgressHUD.h */,
+				FBF29AE620219C1600AACF19 /* HTProgressHUD.m */,
+			);
+			path = HTProgressHUD;
+			sourceTree = "<group>";
+		};
+		FBF29AE920219F4800AACF19 /* 设置启动密码页面 */ = {
+			isa = PBXGroup;
+			children = (
+				FBF29AEB20219F8600AACF19 /* HTSettingPasswordViewController.h */,
+				FBF29AEC20219F8600AACF19 /* HTSettingPasswordViewController.m */,
+			);
+			path = "设置启动密码页面";
+			sourceTree = "<group>";
+		};
+		FBF29AEA20219F6100AACF19 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBF29AE2202192B600AACF19 /* HTInputPasswordViewController.h */,
+				FBF29AE3202192B600AACF19 /* HTInputPasswordViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1352,6 +1412,7 @@
 				FBF29AD820204A3F00AACF19 /* XYSettingCell.m in Sources */,
 				1C1DB6551EF7805A000E6AEF /* HTTools+Date.m in Sources */,
 				1C1DB6641EF7805A000E6AEF /* UIResponder+HTFirstResponder.m in Sources */,
+				FBF29AE4202192B600AACF19 /* HTInputPasswordViewController.m in Sources */,
 				1C1DB64F1EF7805A000E6AEF /* NSDate+HTExtension.m in Sources */,
 				FB7E7C812011DDE800158EF9 /* UIControl+Night.m in Sources */,
 				FB7E7C782011DDE800158EF9 /* UINavigationBar+Night.m in Sources */,
@@ -1379,6 +1440,7 @@
 				1C5EDF471EC4097E00002A46 /* YYTextAttribute.m in Sources */,
 				FB2D58A7201866BC0031D063 /* HTAcountDetailHeaderCell.m in Sources */,
 				1C1DB65B1EF7805A000E6AEF /* HTTools+SafariService.m in Sources */,
+				FBF29AED20219F8600AACF19 /* HTSettingPasswordViewController.m in Sources */,
 				FB7E7C8A2011DDE800158EF9 /* UISearchBar+Keyboard.m in Sources */,
 				1C4EB2CA1EA4A665009A1B3D /* MadokaTextField.swift in Sources */,
 				1C1DB65D1EF7805A000E6AEF /* HTTools+String.m in Sources */,
@@ -1405,6 +1467,7 @@
 				1C1DB6671EF7805A000E6AEF /* UITableViewCell+HTDelaysContentTouches.m in Sources */,
 				FB7E7C7A2011DDE800158EF9 /* UISlider+Night.m in Sources */,
 				1C5EDF3F1EC4097E00002A46 /* YYTextEffectWindow.m in Sources */,
+				FBF29AE020215FAD00AACF19 /* HTTransitionOne.m in Sources */,
 				1C5EDF411EC4097E00002A46 /* YYTextKeyboardManager.m in Sources */,
 				1C5EDF401EC4097E00002A46 /* YYTextInput.m in Sources */,
 				1C1DB65F1EF7805A000E6AEF /* HTTools.m in Sources */,
@@ -1444,6 +1507,7 @@
 				FB7E7C7B2011DDE800158EF9 /* UIBarButtonItem+Night.m in Sources */,
 				1C5EDF3E1EC4097E00002A46 /* YYTextDebugOption.m in Sources */,
 				FB7E7CB4201311C400158EF9 /* XYBaseViewController.m in Sources */,
+				FBF29AE820219C1600AACF19 /* HTProgressHUD.m in Sources */,
 				1C11E4891EB82B7900B00935 /* NSData+HTEncryption.m in Sources */,
 				1C1DB6561EF7805A000E6AEF /* HTTools+FileManager.m in Sources */,
 				FB2D589C2016FE5E0031D063 /* HTAcountListVC.m in Sources */,

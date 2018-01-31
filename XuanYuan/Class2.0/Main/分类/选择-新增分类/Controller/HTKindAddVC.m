@@ -227,7 +227,8 @@
     if ([model.k_push_id isEqualToString:@"acount"])
     {//帐号信息
         HTAcountAddVC *vc = [[HTAcountAddVC alloc]initWithKindModel:model];
-        [self.navigationController pushViewController:vc animated:YES];
+        XYNavigationController *nav = (XYNavigationController *)self.navigationController;
+        [nav pushViewController:vc animated:YES];
     }
 }
 

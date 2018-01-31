@@ -52,7 +52,8 @@
     [rightBtn addClickBlock:^(id obj) {
         HTMainAccountsModel *model = [__self getModel];
         HTAcountAddVC *vc = [[HTAcountAddVC alloc]initWithId:model.a_id];
-        [__self.navigationController pushViewController:vc animated:NO];
+        XYNavigationController *nav = (XYNavigationController *)__self.navigationController;
+        [nav pushViewController:vc animated:YES];
     }];
     
     

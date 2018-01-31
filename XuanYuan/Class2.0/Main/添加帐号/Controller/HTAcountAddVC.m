@@ -142,7 +142,7 @@
     [leftBtn dk_setTitleColorPicker:DKColorPickerWithKey(NavigationBarSettingTintColor) forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftBtn];
     [leftBtn addClickBlock:^(id obj) {
-        [__self.navigationController popViewControllerAnimated:NO];
+        [__self.navigationController popViewControllerAnimated:YES];
     }];
     
     

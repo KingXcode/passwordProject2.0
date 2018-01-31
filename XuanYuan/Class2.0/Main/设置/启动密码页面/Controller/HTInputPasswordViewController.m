@@ -1,19 +1,19 @@
 //
-//  XYNavigationController.m
+//  HTInputPasswordViewController.m
 //  XuanYuan
 //
-//  Created by niesiyang-worker on 2018/1/20.
+//  Created by niesiyang-worker on 2018/1/31.
 //  Copyright © 2018年 聂嗣洋. All rights reserved.
 //
 
-#import "XYNavigationController.h"
-#import "HTTransitionOne.h"
+#import "HTInputPasswordViewController.h"
 
-@interface XYNavigationController ()
-
+@interface HTInputPasswordViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *inputTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @end
 
-@implementation XYNavigationController
+@implementation HTInputPasswordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,12 +25,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-
-{
-    UIViewController* topVC = self.topViewController;
-    return [topVC preferredStatusBarStyle];
-}
 /*
 #pragma mark - Navigation
 
