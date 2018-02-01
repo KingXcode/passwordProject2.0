@@ -129,14 +129,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csm-Bp-Cpa">
+                                <rect key="frame" x="171" y="510" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="5CH-2U-FRn"/>
+                                    <constraint firstAttribute="height" constant="32" id="MhP-gV-0qR"/>
+                                </constraints>
+                                <state key="normal" image="lock-锁"/>
+                                <connections>
+                                    <action selector="clicked:" destination="0u5-nb-I41" eventType="touchUpInside" id="3xx-yF-iao"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lJr-a7-CXr" firstAttribute="leading" secondItem="tI5-l7-Bee" secondAttribute="leading" id="CdS-Tb-WXX"/>
                             <constraint firstItem="tI5-l7-Bee" firstAttribute="trailing" secondItem="lJr-a7-CXr" secondAttribute="trailing" id="E9Z-vj-Ic3"/>
                             <constraint firstItem="lJr-a7-CXr" firstAttribute="top" secondItem="W5q-hd-aIs" secondAttribute="top" id="RdL-t0-Y2R"/>
+                            <constraint firstItem="Csm-Bp-Cpa" firstAttribute="top" secondItem="pfb-XI-lTR" secondAttribute="bottom" constant="7.5" id="W35-8R-v90"/>
                             <constraint firstItem="pfb-XI-lTR" firstAttribute="centerX" secondItem="W5q-hd-aIs" secondAttribute="centerX" id="dYy-xr-ToO"/>
                             <constraint firstItem="tI5-l7-Bee" firstAttribute="bottom" secondItem="lJr-a7-CXr" secondAttribute="bottom" id="fSv-Hk-3gY"/>
+                            <constraint firstItem="Csm-Bp-Cpa" firstAttribute="centerX" secondItem="W5q-hd-aIs" secondAttribute="centerX" id="ivH-qK-ZAn"/>
                             <constraint firstItem="pfb-XI-lTR" firstAttribute="centerY" secondItem="W5q-hd-aIs" secondAttribute="centerY" constant="150" id="sNV-oP-dQX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tI5-l7-Bee"/>
@@ -244,6 +257,7 @@
     <resources>
         <image name="home-首页" width="22" height="22"/>
         <image name="icon_launch" width="375" height="667"/>
+        <image name="lock-锁" width="32" height="32"/>
         <image name="settings-设置" width="22" height="22"/>
     </resources>
 </document>

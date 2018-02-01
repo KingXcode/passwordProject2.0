@@ -8,7 +8,7 @@
 
 #import "HTInputPasswordViewController.h"
 
-@interface HTInputPasswordViewController ()
+@interface HTInputPasswordViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @end
@@ -17,8 +17,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.inputTextField.inputView = nil;
+    self.inputTextField.returnKeyType = UIReturnKeyDone;
+    self.inputTextField.delegate = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.inputTextField becomeFirstResponder];
+    });
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self checkPassword];
+    return YES;
+}
+- (IBAction)clicked:(UIButton *)sender {
+    [self checkPassword];
+}
+
+
+-(void)checkPassword
+{
+    [self.view endEditing:YES];
+    if (self.inputTextField.text.length<1) {
+        return;
+    }
+    if ([[HTConfigManager sharedconfigManager]checkInputPassword:self.inputTextField.text])
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else
+    {
+        [HTProgressHUD showMessage:@"密码错误" forView:self.view];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
